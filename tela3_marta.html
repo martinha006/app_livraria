@@ -7,14 +7,17 @@
     <style>
         .caixa {
             margin: 0 auto;
-            width: 50%;
+            width: 70%;
             height: 800px;
-            display: flex;
-            flex-wrap: wrap;
+            display: block;
             justify-content: space-between;
+            border: 3px double #000; /* Ajustei a cor da borda */
+            border-radius: 20px;
+            text-align: center
         }
         .caixinha {
-            width: 23%; /* Ajustei a largura para garantir espaço suficiente entre as caixas */
+            float: left;
+            width: 10%; /* Ajustei a largura para garantir espaço suficiente entre as caixas */
             padding: 10px;
             margin-bottom: 20px; /* Adicionei margem inferior para separar as caixas verticalmente */
             background-color: #fff; /* Adicionei uma cor de fundo para destacar as caixas */
@@ -22,7 +25,7 @@
             border-radius: 20px;
             text-align: center; /* Centralizei o conteúdo na caixa */
         }
-        .img img {
+        .imagem img {
             width: 100%; /* Ajustei a largura para ocupar toda a largura da caixa */
             max-height: 100%; /* Adicionei altura máxima para evitar distorções */
             display: block;
@@ -33,30 +36,55 @@
 <body style="background-color: #e0caca;">
     <div class="caixa">
         <div class="caixinha">
-            <div class="img">
+            <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
             <p>propaganda1</p>
         </div>
+
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda2</p>
         </div>
+
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda3</p>
         </div>
+
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda4</p>
         </div>
+
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda5</p>
         </div>
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda6</p>
         </div>
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda7</p>
         </div>
         <div class="caixinha">
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
             <p>propaganda8</p>
         </div>
     </div>
