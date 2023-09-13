@@ -1,102 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> 
     <title>MMG</title>
-    <style>/* TELA 3 */
-
-        body {
-            margin: 0;
-            top: 0;
-            float: left;
-            font-family: Arial, sans-serif;
-
-        }
-        .categorias { 
-            background-color: #333;
-            color: #fff;
-            width: 200px;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-        }
-
-        .categorias ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .categorias ul li {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .categorias ul li a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-        }
-
-        .categorias ul li a:hover {
-            background-color: #555;
-        }
-
-        .content {
-            margin-left: 220px; /* Largura da barra lateral + margem de separação */
-            padding: 20px;
-        }
-        
-        :root {--cor-destaque: #ff5733;}
-        
-        /* Usando a variável em várias regras */
-        .botao-destaque {
-            background-color: var(--cor-destaque);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .texto-destaque {
-            color: var(--cor-destaque);
-            font-weight: bold;
-        }
-        div{
-            position:absolute;
-            padding: 20px;
-            top:42%;
-            left:42%;
-            text-align: center;
-            border: 3px double #fff;
-            background: transparent;
-            backdrop-filter: blur(5px);
-            border-radius: 20px;}
-/* Adicione mais estilos conforme necessário */
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">"
 </head>
 <body>
-    <div class="categorias">
-        <ul>
-            <li><a href="#">Terror</a></li>
-            <li><a href="#">Romance</a></li>
-            <li><a href="#">Poema</a></li>
-            <li><a href="#">Ficção-Ciêntifica</a></li>
-            <li><a href="#">Drama</a></li>
-            <li><a href="#">Drama</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <div style="color: #fffd";><h1>Cadastrar</h1>
-            <h2>Email <input type="" placeholder=""></h2>
-            <h2>Senha <input type="" placeholder=""></h2>
-            <button>Enviar</button>> 
-        </div>    
+    <nav class="menu-lateral"></nav>
+    <div class="btn-expandir"></div>
+    <i class="bi bi-list"></i>
+    <ul>
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="text-link">home
+                </span>
+            </a>
+        </li>
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-layout-wtf"></i>
+                </span>
 
-        <!-- Conteúdo do site aqui -->
-    </div>
+                </span>
+                <span class=text-link>
+                </span>
+            </a>
+
+        </li>
+
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon">
+                </span>
+
+                </span>
+                <span class=text-link>
+                </span>
+            </a>
+
+        </li>
+
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon">
+                </span>
+
+                </span>
+                <span class=text-link>
+                </span>
+            </a>
+
+        </li>
+
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon">
+                </span>
+
+                </span>
+                <span class=text-link>
+                </span>
+            </a>
+
+        </li>
+
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon">
+                </span>
+
+                </span>
+                <span class=text-link>
+                </span>
+            </a>
+
+        </li>
+    
+    </ul>
 </body>
 </html>
