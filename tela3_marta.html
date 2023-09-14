@@ -5,44 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMG</title>
     <style>
+        /* body{padding-top: 50px}
+
+        .estrelas input[type=radio] {
+        display: none;
+        }
+        .estrelas label i.fa{
+        font-size: 2.5em
+        }
+        .estrelas label i.fa:before {
+        content:'\f005';
+        color: #FC0;
+        }
+        .estrelas input[type=radio]:checked ~ label i.fa:before {
+        color: #CCC;
+        }
+         */
+        .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
+                background-size: cover; /* Faz a imagem cobrir todo o elemento */
+                background-repeat: no-repeat; /* Impede a repetição da imagem */
+                background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
         .caixa {
             margin: 0 auto;
-            width: 70%;
-            height: 800px;
-            display: block;
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
             justify-content: space-between;
-            border: 3px double #000; /* Ajustei a cor da borda */
-            border-radius: 20px;
-            text-align: center
         }
         .caixinha {
-            float: left;
-            width: 10%; /* Ajustei a largura para garantir espaço suficiente entre as caixas */
+            width: calc(15% - 20px);
             padding: 10px;
-            margin-bottom: 20px; /* Adicionei margem inferior para separar as caixas verticalmente */
-            background-color: #fff; /* Adicionei uma cor de fundo para destacar as caixas */
-            border: 3px double #000; /* Ajustei a cor da borda */
+            margin-bottom: 20px;
+            background-color: #5f4e4e9f;
+            border: 3px double #b1b0b0;
             border-radius: 20px;
-            text-align: center; /* Centralizei o conteúdo na caixa */
+            color:rgb(231, 217, 217)
         }
         .imagem img {
-            width: 100%; /* Ajustei a largura para ocupar toda a largura da caixa */
-            max-height: 100%; /* Adicionei altura máxima para evitar distorções */
+            width: 100%;
+            max-height: 100%;
             display: block;
             margin: 0 auto;
         }
+        
     </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
 </head>
-<body style="background-color: #e0caca;">
+<body font-family: serif; class="imagem"; style=" background-color: #ffffff;">
     <div class="caixa">
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
+                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
             </div>
-            <p>propaganda1</p>
+            Sinopse: <br>Preço: <br>Estoque:
         </div>
 
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
@@ -50,6 +71,7 @@
         </div>
 
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
@@ -57,6 +79,7 @@
         </div>
 
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
@@ -64,28 +87,67 @@
         </div>
 
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
             <p>propaganda5</p>
         </div>
+
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
             <p>propaganda6</p>
         </div>
+
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
             <p>propaganda7</p>
         </div>
+
         <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
             <p>propaganda8</p>
+        </div>        
+
+        <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            <p>propaganda9</p>
+        </div>
+
+        <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            <p>propaganda10</p>
+        </div>
+
+        <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            <p>propaganda11</p>
+        </div>
+
+        <div class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            <p>propaganda12</p>
         </div>
     </div>
 </body>
