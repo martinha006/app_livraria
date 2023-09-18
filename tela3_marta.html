@@ -54,6 +54,10 @@
         div:hover {
         background-color: #00000000;
         }
+        a:link {
+        color: blue; /* Cor padrão para links não visitados */
+        text-decoration: none; /* Remove sublinhado padrão */
+        }
 
 
     </style>
@@ -62,8 +66,8 @@
 
 </head>
 <body font-family: serif; class="imagem"; style=" background-color: #ffffff;">
-    <div class="caixa">
-        <div class="caixinha">
+    <div class="caixa" class="a">
+        <div class="caixinha"  onclick="openBookWindow('link_do_seu_livro.html')">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
@@ -83,9 +87,6 @@
                 <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
         </div>
-
-        
-            
 
         <div class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
@@ -175,5 +176,11 @@
             <p>propaganda12</p>
         </div>
     </div>
+    <script>
+        // Função para abrir uma nova janela quando um livro é clicado
+        function openBookWindow(url) {
+            window.open(url, "_blank", "width=600,height=400");
+        }
+    </script>
 </body>
 </html>
