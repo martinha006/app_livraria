@@ -25,7 +25,7 @@ nav.menu-lateral{
     transition:0.5s;
 }
 
-nav.menu-lateral:hover{
+nav.menu-lateral.expandir{
     width:300px;
 }
 
@@ -47,6 +47,10 @@ ul{
 
 ul li.item-menu{
     transition:0.8s;
+}
+
+ul li.ativo{
+background-color:#906749;
 }
 
 ul li.item-menu:hover{
