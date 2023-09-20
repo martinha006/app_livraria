@@ -1,1 +1,1 @@
-var menuItem
+var menuItem = document.querySelectorAll
