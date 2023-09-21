@@ -22,11 +22,12 @@
         .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
                 background-size: cover; /* Faz a imagem cobrir todo o elemento */
                 background-repeat: no-repeat; /* Impede a repetição da imagem */
-                background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
+                background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
+        }
         .caixa {
             margin: 0 auto;
             width: 60%;
-            display: flex;
+            display: block;
             flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
             justify-content: space-between;
         }
@@ -51,7 +52,7 @@
             
             color:rgb(231, 217, 217)
         }
-        .button {
+        .caixinha {
         margin-bottom: 30px;
         background-color: #3498db;
         color: rgb(231, 217, 217);
@@ -65,7 +66,7 @@
         width: calc(17% - 20px);
         }
 
-        .button:hover {
+        .caixinha:hover {
         transform: translateY(-5px); /* Move o botão 5 pixels para cima quando o mouse passa por cima */
         box-shadow: 0 5px 20px rgb(53, 52, 52); /* Adiciona uma sombra suave */
         }
@@ -76,116 +77,94 @@
 
 </head>
 <body font-family: serif; class="imagem"; style=" background-color: #ffffff;"> <!-- -->
+    <div class="caixa">
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5"/>
+            </div>
+        </button>
     
-    <div class="caixa" class="a">
-            <button class="button">
-                <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-                <div class="imagem">
-                    <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
-                </div>
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+    </div>
+    <div class="caixa">
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
+            Sinopse: <br>Preço: <br>Estoque: <br>
+        </button>
+
+        <button class="caixinha">
+            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
+            <div class="imagem">
+                <img src="img_teste1.JPG" alt="">
+            </div>
                 Sinopse: <br>Preço: <br>Estoque: <br>
-                <div class="estrelas">
-                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                    <label for="cm_star-1"><i class="fa"></i></label>
-                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                    <label for="cm_star-2"><i class="fa"></i></label>
-                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                    <label for="cm_star-3"><i class="fa"></i></label>
-                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                    <label for="cm_star-4"><i class="fa"></i></label>
-                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                    <label for="cm_star-5"><i class="fa"></i></label>
-                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                </div>
-        </button>
-    
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
+            </div>      
+        </button> 
 
-        <button class="button">
+        <button class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt="">
             </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </div>        
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="button">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
+                Sinopse: <br>Preço: <br>Estoque: <br>
+            </div>      
+        </button> 
     </div>
     <script>
         // Função para abrir uma nova janela quando um livro é clicado
