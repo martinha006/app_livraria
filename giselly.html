@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>o que eu mudei</title>
     <style>
-
-body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -15,15 +14,16 @@ body {
         .header {
             background-color: #906749;
             color: #fff;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px;
+            display: flow-root;
+            flex-direction:column; /* Alterado para empilhar elementos verticalmente */
+            align-items: center; /* Centralizar verticalmente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .nav ul {
             list-style: none;
-            margin: 1;
+            margin: 0;
             padding: 0;
         }
 
@@ -43,18 +43,20 @@ body {
             text-decoration: underline;
             color: #f7f45f;
         }
+
         .centered-search {
             display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            height: 100;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Definir a largura total para centralizar horizontalmente */
         }
+
         .group {
             display: flex;
             line-height: 28px;
             align-items: center;
             position: relative;
-            max-width: 190px;
+            max-width: 250px;
         }
 
         .input {
@@ -69,7 +71,7 @@ body {
             background-color: #f3f3f4;
             color: #0d0c22;
             transition: .3s ease;
-        }
+margin-left: 20%;        }
 
         .input::placeholder {
             color: #9e9ea7;
@@ -89,19 +91,48 @@ body {
             width: 1rem;
             height: 1rem;
         }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 20px; /* Espaçamento direito para os botões */
+            width: 100%; /* Definir a largura total para centralizar horizontalmente */
+        }
+
+        /* Estilos para os botões */
+        .button {
+            background-color: #47342e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px; /* Espaçamento entre os botões */
+            cursor: pointer;
+        }
+
+
+        /* Estilo para o segundo botão (FAVORITOS) */
+
     </style>
 </head>
 <body>
     <div class="header">
         <div class="nav">
-            <ul>
-                <li><a href="#">Coração</a></li>
-                <li><a href="#">Carinho</a></li>
-            </ul>
-            <div class="group">
-                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
-                <input placeholder="pesquisar..." type="pesquisar..." class="input">
-              </div>
+            <div class="centered-search">
+                <div class="group">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <!-- Seu ícone de pesquisa aqui -->
+                    </svg>
+                </div>
+                <input placeholder="Pesquisar..." type="text" class="input">
+
+                <!-- Div para os botões no canto superior direito -->
+                <div class="button-container">
+                    <button class="button">CARRINHO</button>
+                    <button class="button">FAVORITOS</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
