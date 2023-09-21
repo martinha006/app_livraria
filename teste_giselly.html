@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Pesquisa Saraiva Livros</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+        }
+
+        /* Estilos para a barra de pesquisa Saraiva Livros */
+        .search-bar {
+            background-color: #0000ff;
+            display: block;
+            height: 100px; /* Altura reduzida */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        padding: 10px 0;
+
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 8px;
+            font-size: 16px;
+            margin-left: 42%;
+        }
+
+        .search-button {
+            background-color: #e100ff;
+            color: #966969;
+            border-radius: 8px;
+            padding: 10px 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #030201;
+        }
+
+        /* Estilos para os botões "CARRINHO" e "FAVORITOS" */
+        .cart-button, .favorites-button {
+            background-color: #ff6c00;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 30px;
+            margin-left: 20px;
+            cursor: pointer;
+            left: 0 auto;
+        }
+
+        .cart-button:hover, .favorites-button:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <div>
+            <input type="text" class="search-input" placeholder="Pesquisar livros...">
+            <button class="search-button">Pesquisar</button>
+        </div>
+        <div>
+            <button class="cart-button">CARRINHO</button>
+            <button class="favorites-button">FAVORITOS</button>
+        </div>
+</div>
+</body>
+</html>

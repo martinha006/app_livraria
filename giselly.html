@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>o que eu mudei</title>
     <style>
-<<<<<<< HEAD
-
-body{
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         .header {
-            background-color: #553232;
+            background-color: #906749;
             color: #fff;
-            padding: 10px 0;
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav {
-            float: right;
-            width: 20%;
-            line-height: 60px;
+            padding: 10px;
+            display: flow-root;
+            flex-direction:column; /* Alterado para empilhar elementos verticalmente */
+            align-items: center; /* Centralizar verticalmente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .nav ul {
             list-style: none;
-            margin: 0; 
+            margin: 0;
             padding: 0;
         }
 
@@ -41,104 +34,105 @@ body{
 
         .nav a {
             text-decoration: none;
-            color: #f8f5f5;
+            color: #efefef;
             font-weight: bold;
             font-size: 18px;
         }
 
         .nav a:hover {
             text-decoration: underline;
-            color: #78cafe;
-=======
-        body{ background-image: url(img.fundo.jpg);
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
->>>>>>> a0d2e2a55aeba6ddf1aaaa19ef9558d871c5376f
+            color: #f7f45f;
         }
-        
-        .overlay {
-            height: 100%;
-            width: 100%;
-            display: none;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
-            }
 
-        /* The content */
-        .overlay-content {
+        .centered-search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Definir a largura total para centralizar horizontalmente */
+        }
+
+        .group {
+            display: flex;
+            line-height: 28px;
+            align-items: center;
             position: relative;
-            top: 46%;
-            width: 80%;
-            text-align: center;
-            margin-top: 30px;
-            margin: auto;
-            }
+            max-width: 250px;
+        }
 
-        /* Close button */
-        .overlay .closebtn {
+        .input {
+            width: 100%;
+            height: 40px;
+            line-height: 28px;
+            padding: 0 1rem;
+            padding-left: 2.5rem;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            outline: none;
+            background-color: #f3f3f4;
+            color: #0d0c22;
+            transition: .3s ease;
+margin-left: 20%;        }
+
+        .input::placeholder {
+            color: #9e9ea7;
+        }
+
+        .input:focus, input:hover {
+            outline: none;
+            border-color: rgb(253, 249, 249);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(245, 243, 244, 0.1);
+        }
+
+        .icon {
             position: absolute;
-            top: 20px;
-            right: 45px;
-            font-size: 60px;
-            cursor: pointer;
-            color: rgb(116, 8, 62);
-            }
+            left: 1rem;
+            fill: #9e9ea7;
+            width: 1rem;
+            height: 1rem;
+        }
 
-        .overlay .closebtn:hover {
-            color: #05851a;
-            }
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 20px; /* Espaçamento direito para os botões */
+            width: 100%; /* Definir a largura total para centralizar horizontalmente */
+        }
 
-        /* Style the search field */
-        .overlay input[type=text] {
-            padding: 15px;
-            font-size: 17px;
+        /* Estilos para os botões */
+        .button {
+            background-color: #47342e;
+            color: #fff;
+            padding: 10px 20px;
             border: none;
-            float: left;
-            width: 80%;
-            background: white;
-            }
-
-        .overlay input[type=text]:hover {
-            background: #b10c0c;
-            }
-
-        /* Style the submit button */
-        .overlay button {
-            float: left;
-            width: 20%;
-            padding: 15px;
-            background: #4906e4;
-            font-size: 17px;
-            border: none;
+            border-radius: 5px;
+            margin-left: 10px; /* Espaçamento entre os botões */
             cursor: pointer;
-            }
+        }
 
-        .overlay button:hover {
-            background: #ac4bd3;
-            }
+
+        /* Estilo para o segundo botão (FAVORITOS) */
+
     </style>
 </head>
 <body>
     <div class="header">
-        <div id="myOverlay" class="overlay">
-            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
-            <div class="overlay-content">
-              <form action="action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
-            </div>
-          </div>
         <div class="nav">
-            <ul>
-                <li><a href="#">Carinho</a></li>
-                <li><a href="#">Coração</a></li>
-            </ul>
+            <div class="centered-search">
+                <div class="group">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <!-- Seu ícone de pesquisa aqui -->
+                    </svg>
+                </div>
+                <input placeholder="Pesquisar..." type="text" class="input">
+
+                <!-- Div para os botões no canto superior direito -->
+                <div class="button-container">
+                    <button class="button">CARRINHO</button>
+                    <button class="button">FAVORITOS</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
