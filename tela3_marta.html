@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMG</title>
     <style>
-
-        .estrelas input[type=radio] { /*tem algo errado com as estrelas*/
-        display: none;
+        .imagem { 
+            background-image: url('biblioteca66.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
-
-        .estrelas label i.fa:before {
-        content:'\f005';
-        background-color: rgba(255, 187, 0, .1);
-        color: #FC0;
-        }
-        .estrelas input[type=radio]:checked ~ label i.fa:before {
-        color: #ffffff;
-        }
-
-        .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
-                background-size: cover; /* Faz a imagem cobrir todo o elemento */
-                background-repeat: no-repeat; /* Impede a repetição da imagem */
-                background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
-        }
+        
         .caixa {
             margin: 0 auto;
             width: 60%;
-            display: block;
-            flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
+            display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+        }
+
+        .caixinha {
+            width: calc(15% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #5f4e4e9f;
+            border: 3px double rgb(231, 217, 217);
+            border-radius: 20px;
+            color: rgb(231, 217, 217);
+            cursor: pointer; /* Adiciona cursor de mão ao passar o mouse */
+            transition: transform 0.3s ease;
+        }
+
+        .caixinha:hover {
+            transform: translateY(-5px); /* Move a caixinha 5 pixels para cima quando o mouse passa por cima */
+            box-shadow: 0 5px 20px rgb(53, 52, 52);
         }
         
         .imagem img {
@@ -38,47 +43,39 @@
             display: block;
             margin: 0 auto;
         }
-
+        
         div {
-        background-color: #3498db00;
-        transition: background-color 0.3s ease;
+            background-color: #3498db00;
+            transition: background-color 0.3s ease;
         }
-
+        
         div:hover {
-        background-color: #00000000;
+            background-color: #00000000;
+        }
+        
+        a:link {
+            color: blue;
+            text-decoration: none;
         }
 
-        .caixinha {
-            
-            color:rgb(231, 217, 217)
-        }
-        .caixinha {
-        margin-bottom: 30px;
-        background-color: #3498db;
-        color: rgb(231, 217, 217);
-        border: none;
-        border-radius: 20px;
-        transition: transform 0.3s ease;
-
-        text-align: left;
-        border: 3px double rgb(231, 217, 217);
-        background-color: #5f4e4e9f;
-        width: calc(17% - 20px);
+        /* Estilos adicionados para os botões de estrelas */
+        .estrelas label i.fa:before {
+            content: '\f005';
+            background-color: rgba(255, 187, 0, .1);
+            color: #FC0;
         }
 
-        .caixinha:hover {
-        transform: translateY(-5px); /* Move o botão 5 pixels para cima quando o mouse passa por cima */
-        box-shadow: 0 5px 20px rgb(53, 52, 52); /* Adiciona uma sombra suave */
+        .estrelas input[type=radio]:checked ~ label i.fa:before {
+            color: #ffffff;
         }
-
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
 </head>
-<body font-family: serif; class="imagem"; style=" background-color: #ffffff;"> <!-- -->
+<body font-family: serif; class="imagem"; style=" background-color: #ffffff;">
     <div class="caixa">
-        <button class="caixinha">
+        <!-- Seu código HTML para as caixinhas vai aqui -->
+        <div class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
                 <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
@@ -97,80 +94,64 @@
                 <label for="cm_star-5"><i class="fa"></i></label>
                 <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
-        </button>
-    
-        <button class="caixinha">
+        </div><div class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
+                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
             </div>
             Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="caixinha">
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5"/>
+            </div>
+        </div><div class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
+                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
             </div>
             Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="caixinha">
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5"/>
+            </div>
+        </div><div class="caixinha">
             <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
             <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
+                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
             </div>
             Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="caixinha">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="caixinha">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
+        </div>
     </div>
-    <div class="caixa">
-        <button class="caixinha">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-            Sinopse: <br>Preço: <br>Estoque: <br>
-        </button>
-
-        <button class="caixinha">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-                Sinopse: <br>Preço: <br>Estoque: <br>
-            </div>      
-        </button> 
-
-        <button class="caixinha">
-            <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span> <!--Responsavel por colocar os iconis-->
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt="">
-            </div>
-                Sinopse: <br>Preço: <br>Estoque: <br>
-            </div>      
-        </button> 
-    </div>
-    <script>
-        // Função para abrir uma nova janela quando um livro é clicado
-        function openBookWindow(url) {
-            window.open(url, "_blank", "width=600,height=400");
-        }
-    </script>
 </body>
 </html>
