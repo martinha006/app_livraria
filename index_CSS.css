@@ -1,0 +1,148 @@
+.imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
+
+
+/* Estilos para todas as telas */
+.tela {
+    position: absolute;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 3px double beige;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.tela a {
+    text-decoration: none;
+    color: beige;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.tela a:hover {
+    color: aqua;
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a tela de compras */
+#compras .caixa {
+    margin: 5px;
+    width: 100%; /* Alterado para ocupar 100% da largura */
+    display: flex; /* Alterado para usar flexbox */
+    flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
+    justify-content: space-between;
+}
+
+#compras .caixinha {
+    width: calc(20% - 20px); /* Calculado para ocupar 20% da largura com margens entre elas */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #5f4e4e9f;
+    border: 3px double rgb(231, 217, 217);
+    border-radius: 20px;
+    color: rgb(231, 217, 217);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    float: left; /* Para alinhar as caixas lado a lado */
+}
+
+#compras .caixinha:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgb(53, 52, 52);
+}
+
+#compras .imagem img {
+    width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#compras div {
+    background-color: #3498db00;
+    transition: background-color 0.3s ease;
+}
+
+#compras div:hover {
+    background-color: #00000000;
+}
+
+#compras a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+
+/* tela Detalhar*/
+.estrelas input[type=radio] {
+    display: none;
+}
+
+.estrelas label i.fa:before {
+    content: '\f005';
+    background-color: #985d4100;
+    color: #FC0;
+}
+
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+    color: #ffffff;
+}
+
+.estrelas label i.fa {
+    font-size: 2.5em
+}
+
+.recipiente {
+    text-align: center; /* Centralize o conteúdo */
+    max-width: 80%;
+    margin: 0 auto; /* Centralize o recipiente horizontalmente */
+}
+
+.news-item {
+    width: 48%; /* Largura ajustada para 33.33% para centralizar */
+    display: inline-block; /* Exibe elementos em linha */
+    vertical-align: top; /* Alinha os elementos no topo */
+    margin-right: 10px;
+    padding: 0;
+    height: 400px;
+    text-align: center;
+    box-sizing: border-box; /* Considera as bordas e preenchimento na largura */
+}
+
+.tp {
+    background-color: #985d416e;
+    border: 4px double rgb(231, 217, 217);
+    border-radius: 20px;
+    color: rgb(231, 217, 217);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    height: 70%;
+    width: 70%;
+    text-align: left;
+}
+
+.descricao-box {
+    background-color: #985d416e;
+    border: 4px double rgb(231, 217, 217);
+    border-radius: 10px;
+    color: rgb(231, 217, 217);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px;
+    margin-top: 50px;
+    width: 100%;
+    text-align: left;
+
+}
+#detalhar .imagem img{
+    width: 85%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
