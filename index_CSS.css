@@ -16,11 +16,12 @@
     background: transparent;
     backdrop-filter: blur(5px);
     border-radius: 20px;
+    color: beige;
 }
 
 .tela a {
     text-decoration: none;
-    color: beige;
+    color: rgb(255, 255, 172);
     font-weight: 600;
     font-size: 0.9em;
 }
@@ -146,3 +147,5 @@
     display: block;
     margin: 0 auto;
 }
+
+/*MENU */

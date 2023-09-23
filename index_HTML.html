@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"> <!--TELA3 E 4 DA MARIA-->
     <link rel="stylesheet" type="text/css" href="index_CSS.css">
     <title>MMG</title>
 </head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <body class="imagem">
+    <div id="menu" class="tela" style="display: none">
+        <nav class="menu-lateral">
+            <div class="btn-expandir">
+                
+                <ul>
+                    <li class="item-menu ativo">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-house"></i></span>
+                            <span class="text-link">Menu</span>
+                        </a>
+                    </li>
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-book"></i>
+                            </span></span>
+                            <span class=text-link>Generos</span>
+                        </a>
+                    </li>
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-star"></i>
+                            </span>
+                            <span class=text-link>Top5</span>
+                        </a>
+                    </li>
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-gear"></i></span>
+                            <span class=text-link>Configuraçôes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>    
+        </nav>
+    </div>
+
     <div id="login" class="tela">
         <!-- Conteúdo da tela de login -->
         <h1>Login</h1>
@@ -25,7 +62,7 @@
         <form>
             <h2>Email<input type="text" placeholder=""></h2>
             <h2>Senha<input type="password" placeholder=""></h2>
-            <button type="button" onclick="mostrarTelaDetalhar()">Enviar</button><br>
+            <button type="button" onclick="mostrarTelaCompras()">Enviar</button><br>
             <button type="button" onclick="mostrarTelaCadastro()">Voltar para Login</button>
         </form>
     </div>
@@ -154,7 +191,7 @@
             <div class="recipiente">
                 <div class="descricao-box">
                     Descrição: <br>Não é qualquer pessoa que consegue encontrar um significado para a vida num momento
-                        de profunda dor. Mas Roseli Tardelli conseguiu encontrar na morte de seu irmão, Sérgio, <br>portador
+                        de profunda dor. Mas Roseli Tardelli conseguiu encontrar na morte de seu irmão, Sérgio, portador
                         do HIV, uma causa pela qual lutar. É só olhar a Agência Aids e todo o trabalho que vem realizando
                         para ampliar os direitos de pessoas infectadas pelo HIV e divulgar informação sobre a aids para a 
                         sociedade. A caminhada é tortuosa, os obstáculos são enormes e inúmeros, porém Roseli e sua equipe
@@ -184,8 +221,8 @@
             document.getElementById("cadastro").style.display = "none";
             document.getElementById("compras").style.display = "none";
             document.getElementById("detalhar").style.display = "block";
-
         }
+
     </script>
 </body>
 </html>
