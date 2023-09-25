@@ -1,4 +1,55 @@
-<!DOCTYPE html>
+<style>
+    .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
+            background-size: cover; /* Faz a imagem cobrir todo o elemento */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
+    .caixa {
+        margin: 0 auto;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
+        justify-content: space-between;
+    }
+    .caixinha {
+        width: calc(20% - 15px);
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #5f4e4e9f;
+        border: 3px double rgb(231, 217, 217);
+        border-radius: 20px;
+        color:rgb(231, 217, 217);
+        cursor: pointer; /* Adiciona cursor de mão ao passar o mouse */
+        transition: transform 0.3s ease;
+    }
+    .caixinha:hover {
+        transform: translateY(-5px); /* Move a caixinha 5 pixels para cima quando o mouse passa por cima */
+        box-shadow: 0 5px 20px rgb(53, 52, 52);
+    }
+    .imagem img {
+        width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div {
+    background-color: #3498db00;
+    transition: background-color 0.3s ease;
+    }
+
+    div:hover {
+    background-color: #00000000;
+    }
+    a:link {
+    color: blue; /* Cor padrão para links não visitados */
+    text-decoration: none; /* Remove sublinhado padrão */
+    }
+</style>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,4 +99,4 @@
       </div>
       
 </body>
-</html>
+</html> -->
