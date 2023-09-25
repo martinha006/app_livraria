@@ -6,29 +6,28 @@
 
 /* Estilos para todas as telas */
 .tela {
-    position: absolute;
-    padding: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    border: 3px double rgb(255, 255, 255);
-    background: transparent;
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
+    position: absolute; /*posição absoluta , centralizou tudo*/
+    padding: 20px;  /* preenchimento de 20% da tela*/
+    top: 50%; /*topo de 50%*/
+    left: 50%;/*esquerda 50%*/
+    transform: translate(-50%, -50%); /**/
+    text-align: center;/* texto alinhado no centro*/
+    border: 3px double rgb(255, 255, 255);/*linha dupla de 3px*/
+    background: transparent; /*fundo transparente*/
+    backdrop-filter: blur(5px); /*desfoque de fundo*/ 
+    border-radius: 10px;/*linha da borda*/
     color: beige;
 }
 
-.tela a {
-    text-decoration: none;
-    color: rgb(255, 255, 172);
-    font-weight: 600;
-    font-size: 0.9em;
+.tela a {/*é como se fosse uma função*/
+    text-decoration: none; /*decoração de texto nenhuma*/
+    font-weight: 600px; /*espessura da fonte*/ 
+    font-size: 0.9em; /*tamanho da fonte*/
 }
 
-.tela a:hover {
-    color: aqua;
-    text-decoration: underline;
+.tela a:hover { /*assim que o mouse passar por cima*/
+    color: aqua; /* mudar de cor o botão continuar e cadastrar */
+    text-decoration: underline; /*texto decorado e sublinhado*/
 }
 
 /* Estilos específicos para a tela de compras */
