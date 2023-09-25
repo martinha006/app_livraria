@@ -80,72 +80,10 @@
 }
 
 
-/* tela Detalhar*/
-.estrelas input[type=radio] {
-    display: none;
-}
 
-.estrelas label i.fa:before {
-    content: '\f005';
-    background-color: #985d4100;
-    color: #FC0;
-}
-
-.estrelas input[type=radio]:checked ~ label i.fa:before {
-    color: #ffffff;
-}
-
-.estrelas label i.fa {
-    font-size: 2.5em
-}
-
-.recipiente {
-    text-align: center; /* Centralize o conteúdo */
-    max-width: 80%;
-    margin: 0 auto; /* Centralize o recipiente horizontalmente */
-}
-
-.news-item {
-    width: 48%; /* Largura ajustada para 33.33% para centralizar */
-    display: inline-block; /* Exibe elementos em linha */
-    vertical-align: top; /* Alinha os elementos no topo */
-    margin-right: 10px;
-    padding: 0;
-    height: 400px;
-    text-align: center;
-    box-sizing: border-box; /* Considera as bordas e preenchimento na largura */
-}
-
-.tp {
-    background-color: #985d416e;
-    border: 4px double rgb(231, 217, 217);
-    border-radius: 20px;
-    color: rgb(231, 217, 217);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    height: 70%;
-    width: 70%;
-    text-align: left;
-}
-
-.descricao-box {
-    background-color: #985d416e;
-    border: 4px double rgb(231, 217, 217);
-    border-radius: 10px;
-    color: rgb(231, 217, 217);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin: 20px;
-    margin-top: 50px;
-    width: 100%;
-    text-align: left;
-
-}
-#detalhar .imagem img{
-    width: 85%;
-    max-height: 100%;
-    display: block;
-    margin: 0 auto;
-}
 
 /*MENU */
+
+/* SIDE BAR  - MARIA */
+
+
