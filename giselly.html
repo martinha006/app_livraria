@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>o que eu mudei</title>
     <style>
-        body {
+body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        .logo{
-            
         }
         .header {
             background-color: #906749;
@@ -22,6 +18,7 @@
             flex-direction:column; /* Alterado para empilhar elementos verticalmente */
             align-items: center; /* Centralizar verticalmente */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
         }
 
         .nav ul {
@@ -41,11 +38,10 @@
             font-weight: bold;
             font-size: 18px;
         }
-
-        /*.nav a:hover {
+        .nav a:hover {
             text-decoration: underline;
-            color: #5501b6;
-        }*/
+            color: #088fa7;
+        }
 
         .centered-search {
             display: flex;
@@ -64,7 +60,7 @@
 
         .input {
             width: 100%;
-            height: 40px;
+            height: 60px;
             line-height: 28px;
             padding: 0 1rem;
             padding-left: 2.5rem;
@@ -113,12 +109,12 @@
             border-radius: 5px;
             margin-left: 10px; /* Espaçamento entre os botões */
             cursor: pointer;
-            /*text-decoration: underline;
-            color: #088fa7;*/
+            height: 60px;
+        }
+        .titulo{
+            width: 150px;
         }
 
-
-        /* Estilo para o segundo botão (FAVORITOS) */
 
     </style>
 </head>
@@ -129,6 +125,7 @@
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <!-- Seu ícone de pesquisa aqui -->
+                        <img class="titulo" src="2.jpg" alt="Logo da Sua Empre"> <!-- Perguntar pq o IMG está dando errado e o que devo fazer para conserta-lo-->
                     </svg>
                 </div>
                 <input placeholder="Pesquisar..." type="text" class="input">
