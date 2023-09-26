@@ -1,0 +1,102 @@
+<style>
+    .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
+            background-size: cover; /* Faz a imagem cobrir todo o elemento */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
+    .caixa {
+        margin: 0 auto;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
+        justify-content: space-between;
+    }
+    .caixinha {
+        width: calc(20% - 15px);
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #5f4e4e9f;
+        border: 3px double rgb(231, 217, 217);
+        border-radius: 20px;
+        color:rgb(231, 217, 217);
+        cursor: pointer; /* Adiciona cursor de mão ao passar o mouse */
+        transition: transform 0.3s ease;
+    }
+    .caixinha:hover {
+        transform: translateY(-5px); /* Move a caixinha 5 pixels para cima quando o mouse passa por cima */
+        box-shadow: 0 5px 20px rgb(53, 52, 52);
+    }
+    .imagem img {
+        width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div {
+    background-color: #3498db00;
+    transition: background-color 0.3s ease;
+    }
+
+    div:hover {
+    background-color: #00000000;
+    }
+    a:link {
+    color: blue; /* Cor padrão para links não visitados */
+    text-decoration: none; /* Remove sublinhado padrão */
+    }
+</style>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMG_tela3</title>
+    <style>
+        .container {
+            max-width: 1200px; /*largura máxima: 1200px*/
+            margin: 0 auto; /* margem*/
+            padding: 20px; /*preenchimento*/
+            }
+
+        .row { /*linha*/
+            display: block; /*mostrar*/
+            flex-wrap: wrap; /*envoltório flexível*/
+            margin: 0 -10px;/* margem*/
+        }
+
+        .col-1, .col-2, .col-3,.col-4,.col-5,.col-6, .col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
+            margin: 50px;
+            padding: 20px;/*preenchimento*/
+            max-width: 10%; /*largura máxima*/
+            float: left;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-1">Coluna 1</div>
+          <div class="col-2">Coluna 2</div>
+          <div class="col-3">Coluna 3</div>
+          <div class="col-4">Coluna 4</div>
+          <div class="col-5">Coluna 5</div>
+          <div class="col-6">Coluna 6</div>
+        </div>
+        <div class="row">
+          <div class="col-7">Coluna 7</div>
+          <div class="col-8">Coluna 8</div>
+          <div class="col-9">Coluna 9</div>
+          <div class="col-10">Coluna 10</div>
+          <div class="col-11">Coluna 11</div>
+          <div class="col-12">Coluna 12</div>
+        </div>
+      </div>
+      
+</body>
+</html> -->

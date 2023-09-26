@@ -3,74 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMG_tela4</title>
-    <style>
-        .estrelas input[type=radio] { /*tem algo errado com as estrelas*/
+    <link rel="stylesheet" href="index_CSS.css">
+    <title>MMG</title>
+    <style>/* tela Detalhar*/
+        .estrelas input[type=radio] {
             display: none;
         }
-
+        
         .estrelas label i.fa:before {
-            content:'\f005';
-            background-color: #785b46;
+            content: '\f005';
+            background-color: #985d4100;
             color: #FC0;
         }
+        
         .estrelas input[type=radio]:checked ~ label i.fa:before {
             color: #ffffff;
         }
-        .estrelas label i.fa{
-            font-size: 3.5em
+        
+        .estrelas label i.fa {
+            font-size: 2.5em
         }
-        .recipiente{
-            display: block;      /* mostrar: bloco*/
-            justify-content: space-between;   /*justifique-conteúdo:ritmo entre  */
-            margin-top: 0; /*margem] topo: 0*/
+        
+        .recipiente {
+            text-align: center; /* Centralize o conteúdo */
             max-width: 80%;
-
+            margin: 0 auto; /* Centralize o recipiente horizontalmente */
+            text-align: center;/* texto alinhado no centro*/
+            border: 5px double #dddddd;/*linha dupla de 3px*/
+            background: transparent; /*fundo transparente*/
+            backdrop-filter: blur(5px); /*desfoque de fundo*/ 
+            border-radius: 10px;/*linha da borda*/
+            color: rgb(225, 222, 222);
+            width: 1200px;
+            height: 1200px;
         }
+        
         .news-item {
-            width: 40%;  /*largura: 48%*/
-            float: left;  /*flutuador: esquerda*/
-            margin-right: 25px;
-            padding: 0;  /*preenchimento: 10px*/
-            height: 400px;  /*altura: 400px*/
-            text-align: center; /*alinhamento de texto: centro*/
+            width: 48%; /* Largura ajustada para 33.33% para centralizar */
+            display: inline-block; /* Exibe elementos em linha */
+            vertical-align: top; /* Alinha os elementos no topo */
+            margin-right: 10px;
+            padding: 0;
+            height: 400px;
+            text-align: center;
+            box-sizing: border-box; /* Considera as bordas e preenchimento na largura */
         }
-        .spe {
-            background-color: #785b46;
-            border: 3px double rgb(231, 217, 217);
+        
+        .tp {
+            background-color: #985d416e;
+            border: 4px double rgb(231, 217, 217);
             border-radius: 20px;
-            color:rgb(231, 217, 217);
-            cursor: pointer; /* Adiciona cursor de mão ao passar o mouse */
+            color: rgb(0, 0, 0);
+            cursor: pointer;
             transition: transform 0.3s ease;
             height: 70%;
-            width: 70%;  /*largura: 48%*/
+            width: 70%;
             text-align: left;
-
         }
+        
         .descricao-box {
-            background-color: #fdb9b9; /* Cor de fundo da caixa */
-            padding: 20px; /* Espaçamento interno da caixa */
-            border: 1px solid #ccc; /* Borda da caixa */
-            border-radius: 10px; /* Borda arredondada */
-            margin: 15px; /* Margem ao redor da caixa */
-            margin-top: 20%;
+            margin-top: 5px;
+            width: 100%;
+            text-align: left; 
+            color: rgb(0, 0, 0);       
         }
-    </style>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    
+        #detalhar .img{
+            width: 85%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
 </head>
-<body>
+<body class="fundo_fonte" class="tela">
     <div class="recipiente">
         <div class="news-item">
-            <div class="imagem">
-                <img src="img_teste1.JPG" alt=""> <!--REsponsavel por colocar a imagem-->
+            <div class="img">
+                <img src="img_teste1.JPG" alt="">
             </div>
         </div>
         <div class="news-item">
-            <div class="spe">
-                <div style=" margin-bottom: 0 auto; margin: 15px; font-size: 20px;">
+            <div class="tp">
+                <div style="margin-bottom: 0 auto; margin: 15px; font-size: 20px;">
+                    <p>Título </p><br>
                     <p>Preço: </p><br>
-                    <p>Estoque: </p><br>
                 </div>
                 <div class="estrelas" style="text-align: center;">
                     <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -87,18 +103,17 @@
                 </div>
             </div>
         </div>
-        <div class="news-item">
             <div class="descricao-box">
-                <p>Descrição: <br>Não é qualquer pessoa que consegue encontrar um significado para a vida num momento
+                Descrição: <br>Não é qualquer pessoa que consegue encontrar um significado para a vida num momento
                     de profunda dor. Mas Roseli Tardelli conseguiu encontrar na morte de seu irmão, Sérgio, portador
                     do HIV, uma causa pela qual lutar. É só olhar a Agência Aids e todo o trabalho que vem realizando
                     para ampliar os direitos de pessoas infectadas pelo HIV e divulgar informação sobre a aids para a 
                     sociedade. A caminhada é tortuosa, os obstáculos são enormes e inúmeros, porém Roseli e sua equipe
                     de colaboradores conseguem movimentar uma energia tão forte que barreiras são rompidas quase que
-                    diariamente.</p><br>
+                    diariamente.<br>
             </div>
         </div>
     </div>
-
 </body>
 </html>
+

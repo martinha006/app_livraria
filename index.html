@@ -3,42 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMG </title> 
-    <style>/* TELA 1 */
-        div{position:absolute;/*posição: absoluta*/
-            padding: 20px;/*preenchimento: 20px*/
-            top:42%;/*topo: 42%*/
-            left:42%;/*esquerda: 42%*/
-            text-align: center; /*texto_alinhamento: centro*/
-            border: 3px double #fff; /*borda: 3px*/
-            background: transparent; /*fundo: transparente*/
-            backdrop-filter: blur(5px); /*filtro de pano de fundo: desfoque(5px)*/
-            border-radius: 20px; /*raio da fronteira: 20px*/}
-
-        div a{text-decoration: none; /*decoração de texto: nenhuma*/
-            color: beige; /*cor: beige*/
-            font-weight:600; /*espessura da fonte:600*/
-            font-size: .9em; /*tamanho da fonte: .9em*/}
-
-        div a:hover{color: aqua; /*cor: aqua*/
-            text-decoration: underline; /*decoração de texto: sublinhada*/}
-
-        .imagem {background-image: url('biblioteca66.jpg'); /*imagem de fundo*/
-        background-size: cover; /* Faz a imagem cobrir todo o elemento */
-        background-repeat: no-repeat; /* Impede a repetição da imagem */
-        background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */}
-
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"> <!--TELA3 E 4 DA MARIA-->
+    <link rel="stylesheet" type="text/css" href="index_CSS.css">
+    <link rel="stylesheet" href="tela_compras.html">
+    <title>MMG</title>
 </head>
-<body font-family: serif; class="imagem">
-    <div style="color: white";>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+<body class="imagem">
+
+    <div id="login" class="tela"> <!--MARIA-->
         <h1>Login</h1>
-        <h2>Email <input type="" placeholder=""></h2>
-        <h2>Senha <input type="" placeholder=""></h2>
-        <button>Continuar</button>
-        <p>Não tem uma conta? <a href="tela2_marta.html" class="link-registro">Cadastrar-se</a></p>
-        </div>
-    
+        <form>
+            <h2>Email<input type="text" placeholder=""></h2>
+            <h2>Senha<input type="password" placeholder=""></h2>
+            <!-- <button type="button" onclick="mostrarTelaCompras()">Continuar</button> -->
+            <button type="button"><a href="tela_compras.html">Continuar</a></button>
+            <p>Não tem uma conta? <a href="#" onclick="mostrarTelaCadastro()" class="link-registro">Cadastrar-se</a></p>
+        </form>
+    </div>
+
+    <div id="cadastro" class="tela" style="display: none;"> <!--MARTA-->
+        <h1>Cadastrar</h1>
+        <form>
+            <h2>Email<input type="text" placeholder=""></h2>
+            <h2>Senha<input type="password" placeholder=""></h2>
+            <!-- <button type="button" onclick="mostrarTelaCompras()">Enviar</button><br> -->
+            <button type="button"><a href="tela_compras.html">Enviar</a></button>
+        </form>
+    </div>
+
+
 </body>
 </html>

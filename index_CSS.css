@@ -1,0 +1,163 @@
+/*MARTA*/
+.fundo_fonte{
+    background-color: #dddddd;
+    font-family: serif;
+    text-decoration: #000;
+}
+/* Estilos para todas as telas */
+.tela {
+    position: absolute; /*posição absoluta , centralizou tudo*/
+    padding: 20px;  /* preenchimento de 20% da tela*/
+    top: 50%; /*topo de 50%*/
+    left: 50%;/*esquerda 50%*/
+    transform: translate(-50%, -50%); /*transformar: traduzir*/
+    text-align: center;/* texto alinhado no centro*/
+    border: 5px double #dddddd;/*linha dupla de 3px*/
+    background: transparent; /*fundo transparente*/
+    backdrop-filter: blur(5px); /*desfoque de fundo*/ 
+    border-radius: 10px;/*linha da borda*/
+    color: rgb(225, 222, 222);
+    }
+
+.tela a {/*é como se fosse uma função*/
+    text-decoration: none; /*decoração de texto nenhuma*/
+    font-weight: 60px; /*espessura da fonte*/ 
+    font-size: 0.9em; /*tamanho da fonte*/
+}
+
+.tela a:hover { /*assim que o mouse passar por cima*/
+    color: aqua; /* mudar de cor o botão continuar e cadastrar */
+    text-decoration: underline; /*texto decorado e sublinhado*/}
+
+/* Estilos específicos para a tela de compras */
+#compras .caixa {
+    margin: 5px;
+    width: 100%; /* Alterado para ocupar 100% da largura */
+    display: flex; /* Alterado para usar flexbox */
+    flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
+    justify-content: space-between;
+}
+
+#compras .caixinha {
+    width: calc(27% - 40px); /* Calculado para ocupar 20% da largura com margens entre elas */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #5f4e4e9f;
+    border: 3px double rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(231, 217, 217);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    float: left; /* Para alinhar as caixas lado a lado */
+}
+
+#compras .caixinha:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgb(53, 52, 52);}
+
+#compras .imagem img {
+    width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;}
+
+#compras div {
+    background-color: #3498db00;
+    transition: background-color 0.3s ease;}
+
+#compras div:hover { background-color: #00000000;}
+
+#compras a:link {
+    color: blue;
+    text-decoration: none;}
+
+/* SIDE BAR  - MARIA */
+@import url('https://fonts.googleapis.com/css2?family=Outfit/:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{ height:900vh;}
+
+nav.menu-lateral{
+    width:80px;
+    height:100%;
+    padding:40px 0 40px 1%;
+    background-color: #5f4e4e9f;
+    border: 3px double white;
+    position:fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition:0.5s;}
+    
+nav.menu-lateral:hover{ width:300px;}
+
+.btn-expandir{
+    width:100%;
+    padding-left:10px;}
+
+.btn-expandir > i{
+    color:#ffffff;
+    font-size: 24px;
+    cursor:pointer;}
+
+ul{ height:100%;
+    list-style-type: none;}
+
+ul li.item-menu{ transition:0.5s;}
+
+ul li.item-menu:hover{ background: #78441a;}
+
+ul li.item-menu a{
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;}
+    
+ul li.item-menu a .text-link{ margin-left: 60px;}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left:0;}
+
+/* Seus estilos CSS existentes */
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;}
+
+/* Estilos para o conteúdo do modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+
+/* Estilo para o botão de fechar o modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;}
+
+/*MARTA-- TELA DETALHAR*/
+
+/*GISELLY*/
