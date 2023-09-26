@@ -1,97 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index_CSS.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Adicione a biblioteca Font Awesome -->
     <title>MMG</title> <!--MARTA-->
     <style>
-        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
-
-        .fundo_fonte {
-            background-color: #dddddd;
-            font-family: serif;
-            color: #000;
-        }
-
-        /* Estilos para o recipiente principal */
-        .recipiente {
-            text-align: center;
-            max-width: 1200px;
+        .container {
+            max-width: 600px;
             margin: 0 auto;
-            border: 5px double #000000;
-            background: transparent;
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            color: rgb(225, 222, 222);
             padding: 20px;
-        }
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px double #dddddd;/*linha dupla de 3px*/
 
-        /* Estilos para os itens de notícias */
-        .news-item {
-            width: 48%;
-            display: inline-block;
-            vertical-align: top;
-            margin-right: 2%;
-            padding: 0;
-            height: auto;
+        }
+        h2 {
             text-align: center;
-            box-sizing: border-box;
+            color: #333;
         }
-
-        .tp {
-            background-color: #985d416e;
-            border: 4px double rgb(231, 217, 217);
-            border-radius: 20px;
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            height: 70%;
-            width: 70%;
-            text-align: center;
-            padding: 20px;
-            margin: 0 auto;
-            font-size: 20px;
-        }
-
-        /* Estilos para a descrição */
-        .descricao-box {
-            margin-top: 20px;
-            text-align: left;
-            color: rgb(0, 0, 0);
-        }
-
-        /* Estilos para a imagem */
-        .img {
-            width: 100%;
-            max-height: 100%;
+        label {
             display: block;
-            margin: 0 auto;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="end"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
-<body class="fundo_fonte">
-    <div class="recipiente">
-        <div class="news-item">
-            <div class="img">
-                <img src="img_teste1.JPG" alt="Imagem do produto">
-            </div>
-            <div class="tp">
-                <div style="font-size: 24px;">
-                    <p>Título do Produto</p>
-                    <p>Preço: $19.99</p>
-                </div>
-            </div>
-        </div>
-        <div class="descricao-box" style="font-size: 20px;">
+<body>
+    <div class="container">
+        <h2>Requerimento de Dados Pessoais</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-        </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="end">Endereço 1:</label>
+            <input type="end" id="endereco" name="endereco" required>
+
+            <label for="end">Endereço 2:</label>
+            <input type="end" id="endereco" name="endereco" required>
+
+            <p>Nossa chave pix: xxxxxxxxxxx</p>
+
+            <input type="submit" value="Enviar Dados">
+        </form>
     </div>
 </body>
 </html>
