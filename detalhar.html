@@ -4,51 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index_CSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Adicione a biblioteca Font Awesome -->
     <title>MMG</title>
-    <style>/* tela Detalhar*/
-        .estrelas input[type=radio] {
-            display: none;
-        }
-        
-        .estrelas label i.fa:before {
-            content: '\f005';
-            background-color: #985d4100;
-            color: #FC0;
-        }
-        
-        .estrelas input[type=radio]:checked ~ label i.fa:before {
-            color: #ffffff;
-        }
-        
-        .estrelas label i.fa {
-            font-size: 2.5em
-        }
-        
-        .recipiente {
-            text-align: center; /* Centralize o conteúdo */
-            max-width: 80%;
-            margin: 0 auto; /* Centralize o recipiente horizontalmente */
-            text-align: center;/* texto alinhado no centro*/
-            border: 5px double #dddddd;/*linha dupla de 3px*/
-            background: transparent; /*fundo transparente*/
-            backdrop-filter: blur(5px); /*desfoque de fundo*/ 
-            border-radius: 10px;/*linha da borda*/
-            color: rgb(225, 222, 222);
-            width: 1200px;
-            height: 1200px;
-        }
-        
-        .news-item {
-            width: 48%; /* Largura ajustada para 33.33% para centralizar */
-            display: inline-block; /* Exibe elementos em linha */
-            vertical-align: top; /* Alinha os elementos no topo */
-            margin-right: 10px;
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 0;
-            height: 400px;
-            text-align: center;
-            box-sizing: border-box; /* Considera as bordas e preenchimento na largura */
         }
-        
+
+        .fundo_fonte {
+            background-color: #dddddd;
+            font-family: serif;
+            color: #000;
+        }
+
+        /* Estilos para o recipiente principal */
+        .recipiente {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 5px double #000000;
+            background: transparent;
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            color: rgb(225, 222, 222);
+            padding: 20px;
+        }
+
+        /* Estilos para os itens de notícias */
+        .news-item {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 2%;
+            padding: 0;
+            height: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
         .tp {
             background-color: #985d416e;
             border: 4px double rgb(231, 217, 217);
@@ -59,61 +55,77 @@
             height: 70%;
             width: 70%;
             text-align: left;
+            padding: 20px;
+            margin: 0 auto;
         }
-        
+
+        .estrelas input[type=radio] {
+            display: none;
+        }
+
+        .estrelas label i.fa:before {
+            content: '\f005';
+            background-color: #985d4100;
+            color: #FC0;
+        }
+
+        .estrelas input[type=radio]:checked ~ label i.fa:before {
+            color: #ffffff;
+        }
+
+        .estrelas label i.fa {
+            font-size: 2.5em;
+        }
+
+        /* Estilos para a descrição */
         .descricao-box {
-            margin-top: 5px;
-            width: 100%;
-            text-align: left; 
-            color: rgb(0, 0, 0);       
+            margin-top: 20px;
+            text-align: left;
+            color: rgb(0, 0, 0);
         }
-        #detalhar .img{
-            width: 85%;
+
+        /* Estilos para a imagem */
+        .img {
+            width: 100%;
             max-height: 100%;
             display: block;
             margin: 0 auto;
         }
-        </style>
+    </style>
 </head>
-<body class="fundo_fonte" class="tela">
+<body class="fundo_fonte">
     <div class="recipiente">
         <div class="news-item">
             <div class="img">
-                <img src="img_teste1.JPG" alt="">
+                <img src="img_teste1.JPG" alt="Imagem do produto">
             </div>
-        </div>
-        <div class="news-item">
             <div class="tp">
-                <div style="margin-bottom: 0 auto; margin: 15px; font-size: 20px;">
-                    <p>Título </p><br>
-                    <p>Preço: </p><br>
+                <div style="font-size: 24px;">
+                    <p>Título do Produto</p>
+                    <p>Preço: $19.99</p>
                 </div>
-                <div class="estrelas" style="text-align: center;">
+                <div class="estrelas">
                     <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                    <label for="cm_star-1"><i class="fa"></i></label>
+                    <label for="cm_star-1"><i class="fa fa-star"></i></label>
                     <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                    <label for="cm_star-2"><i class="fa"></i></label>
+                    <label for="cm_star-2"><i class="fa fa-star"></i></label>
                     <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                    <label for="cm_star-3"><i class="fa"></i></label>
+                    <label for="cm_star-3"><i class="fa fa-star"></i></label>
                     <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                    <label for="cm_star-4"><i class="fa"></i></label>
+                    <label for="cm_star-4"><i class="fa fa-star"></i></label>
                     <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                    <label for="cm_star-5"><i class="fa"></i></label>
+                    <label for="cm_star-5"><i class="fa fa-star"></i></label>
                     <input type="radio" id="cm_star-5" name="fb" value="5"/>
                 </div>
             </div>
         </div>
-            <div class="descricao-box">
-                Descrição: <br>Não é qualquer pessoa que consegue encontrar um significado para a vida num momento
-                    de profunda dor. Mas Roseli Tardelli conseguiu encontrar na morte de seu irmão, Sérgio, portador
-                    do HIV, uma causa pela qual lutar. É só olhar a Agência Aids e todo o trabalho que vem realizando
-                    para ampliar os direitos de pessoas infectadas pelo HIV e divulgar informação sobre a aids para a 
-                    sociedade. A caminhada é tortuosa, os obstáculos são enormes e inúmeros, porém Roseli e sua equipe
-                    de colaboradores conseguem movimentar uma energia tão forte que barreiras são rompidas quase que
-                    diariamente.<br>
-            </div>
+        <div class="descricao-box">
+            <p>Descrição:</p>
+            <p>Conseguimos conquistar com braço forte Em teu seio, ó liberdade Desafia o nosso peito a própria morte
+                Ó Pátria amada Idolatrada Salve! Salve! Brasil, um sonho intenso, um raio vívido
+                De amor e de esperança, à terra desce Se em teu formoso céu, risonho e límpido A imagem do Cruzeiro resplandece
+                Gigante pela própria natureza És belo, és forte, impávido colosso E o teu futuro espelha essa grandeza</p>
         </div>
     </div>
 </body>
 </html>
-
