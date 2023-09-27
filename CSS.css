@@ -118,12 +118,15 @@ ul li.item-menu a{
     color:#ffffff;
     text-decoration: none;
     font-size: 20px;
-    padding: 20px 9%;
+    padding: 15px 3%;
     display: flex;
     margin-bottom: 20px;
     line-height: 40px;}
     
-ul li.item-menu a .text-link{ margin-left: 60px;}
+ul li.item-menu a .text-link{ 
+    margin-left: 40px;
+}
+
 
 ul li.item-menu a .icon > i{
     font-size: 30px;
