@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="index_CSS.css">
     <title>MMG</title>
 </head>
-<body class="imagem">
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="centered-search">
+                <div class="group">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <!-- Seu ícone de pesquisa aqui -->
+                        <img class="titulo" src="2.jpg" alt="Logo da Sua Empre"> <!-- Perguntar pq o IMG está dando errado e o que devo fazer para conserta-lo-->
+                    </svg>
+                </div>
+                <input placeholder="Pesquisar..." type="text" class="input">
+
+                <!-- Div para os botões no canto superior direito -->
+                <div class="button-container">
+                    <button class="button">CARRINHO</button>
+                    <button class="button">FAVORITOS</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="menu-lateral"><!--MARIA-->
         <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
             <ul>
                 <li class="item-menu ativo">
                     <a href="#">
                         <span class="icon"><i class="bi bi-house"></i></span>
-                        <span class="text-link">Compras</span>
+                        <a href="livros.html"><span class=text-link>Compras</span></a>
                     </a>
                 </li>
                 <li class="item-menu">
@@ -27,7 +47,7 @@
                     <a href="#">
                         <span class="icon"><i class="bi bi-star"></i>
                         </span>
-                        <span class=text-link>Top5</span>
+                        <a href="tela_top.html"><span class=text-link>Top3</span></a>
                     </a>
 
                 </li>
@@ -44,36 +64,33 @@
         <h1>Top 3 Livros da semana</h1>
         <div class="caixa"> <!--<script src="script.js"></script> CHAMA O ARQUIVO SCRIPT.JS-->
             <div class="caixinha">
-                <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span>
                 <div class="imagem">
                     <img src="img_teste1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button>Comprar</button>
-                <button type="button" onclick="mostrarTelaDetalhar()">Detalhar</button>
+                <button type="button"><a href="comprar.html">Comprar</a></button>
+                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+             </div>
+
+            <div class="caixinha">
+                <div class="imagem">
+                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                </div>
+                <h3>Título do Produto</h3>
+                <p>Preço: $19.99</p>
+                <button type="button"><a href="comprar.html">Comprar</a></button>
+                <button type="button"><a href="detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
-                <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span>
                 <div class="imagem">
                     <img src="img_teste1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button>Comprar</button>
-                <button type="button" onclick="mostrarTelaDetalhar()">Detalhar</button>
-            </div>
-
-            <div class="caixinha">
-                <span class="icon"><i class="bi bi-cart"></i> <i class="bi bi-heart"></i></span>
-                <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto</h3>
-                <p>Preço: $19.99</p>
-                <button>Comprar</button>
-                <button type="button" onclick="mostrarTelaDetalhar()">Detalhar</button>
+                <button type="button"><a href="comprar.html">Comprar</a></button>
+                <button type="button"><a href="detalhar.html">Detalhar</a></button>
             </div>
    
     </div>
