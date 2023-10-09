@@ -68,7 +68,19 @@
                 <p>Preço: $19.99</p>
                 <button type="button"><a href="comprar.html">Comprar</a></button>
                 <button type="button"><a href="detalhar.html">Detalhar</a></button>
-                <button type="button" onclick="adicionarItem('Título do Produto', 19.99, '1.JPG')"><a href="t.html">Adicionar ao Carrinho</a></button>
+                <button type="button" onclick="adicionarItem('Título do Produto', 19.99, '1.JPG')">Adicionar ao Carrinho</a></button>
+            </div>
+
+            <div class="caixinha">
+                <div class="imagem">
+                    <img src="1.JPG" alt="Imagem do produto">
+                </div>
+                <h3>Título do Produto2</h3>
+                <p>Preço: $19.99</p>
+                <button type="button"><a href="comprar.html">Comprar</a></button>
+                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button" onclick="adicionarItem('Título do Produto2', 10.99, '1.JPG')">Adicionar ao Carrinho</a></button>
+
             </div>
 
             <div class="caixinha">
@@ -91,17 +103,13 @@
                 <button type="button"><a href="detalhar.html">Detalhar</a></button>
             </div>
 
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto</h3>
-                <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+            <div id="carrinho">
+                <h2>Carrinho de Compras</h2>
+                <ul id="carrinho-lista">
+                    <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+                </ul>
+                <p>Total: R$ <span id="carrinho-total">0</span></p>
             </div>
-
-
 
     </div>
     <script src="script.js"></script> <!--CHAMA O ARQUIVO SCRIPT.JS--> <!--MARTA-->

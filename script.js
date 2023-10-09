@@ -27,5 +27,53 @@ function aumentarQuantidade(row) {
 }
 
 
+let carrinho = [];
+let total = 0;
+
+function adicionarItem(nome, preco, imagem) {
+    const itemExistente = carrinho.find(item => item.nome == nome);
+
+    if (itemExistente) {
+        itemExistente.quantidade++;
+    } else {
+        carrinho.push({ nome, preco, quantidade: 1, imagem });
+    }
+
+    total += preco;
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    const carrinhoLista = document.getElementById("carrinho-lista");
+    const carrinhoTotal = document.getElementById("carrinho-total");
+
+    carrinhoLista.innerHTML = "";
+    carrinhoTotal.textContent = total.toFixed(2);
+
+    carrinho.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = `<img src="${item.imagem}" alt="Imagem do Produto" width="100"> 
+            ${item.nome} | R$ ${item.preco.toFixed(2)} | Quantidade: ${item.quantidade} 
+            <button onclick="removerItem('${item.nome}', ${item.preco})">-</button>
+            <button onclick="adicionarItem('${item.nome}', ${item.preco}, '${item.imagem}')">+</button>`;
+        carrinhoLista.appendChild(li);
+    });
+}
+
+function removerItem(nome, preco) {
+    const itemExistente = carrinho.find(item => item.nome == nome);
+
+    if (itemExistente) {
+        if (itemExistente.quantidade == 1) {
+            carrinho = carrinho.filter(item => item.nome !== nome);
+        } else {
+            itemExistente.quantidade--;
+        }
+
+        total -= preco;
+        atualizarCarrinho();
+    }
+}
+
 
 
