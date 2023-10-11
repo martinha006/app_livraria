@@ -250,11 +250,9 @@ ul li.item-menu a .icon > i{
     background-color: #47342e;
     color: #fff;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    margin-left: 10px; /* Espaçamento entre os botões */
-    cursor: pointer;
     height: 60px;
+    margin-right: 140px;
 }
 .titulo{
     width: 100px;

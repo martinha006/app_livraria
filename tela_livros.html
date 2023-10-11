@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+</html>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="styles.css">
+
     <title>MMG</title>
 </head>
+<style>
+.menu-btn {
+    position: fixed;
+    top: 17px;
+    right: 20px;
+    padding: 21px 24px;
+    background-color: #47342e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+.menu {
+    position: fixed;
+    top: 10%;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px 0 rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu.active {
+    right: 0;
+}
+
+</style>
 <body>
     <div class="header">
         <div class="nav">
@@ -20,24 +67,56 @@
 
                 <div class="button-container">
                     <button class="button">FAVORITOS</button>
-                    <button class="button">FAVORITOS</button>
+                    <button id="toggle-menu-btn" class="menu-btn">Carrinho</button> <!--&#9776; isso serve para por os tracinhos de um menu-->
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="menu" class="menu">
+        <table>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+          </table>
+    </div>
+
+    <div class="content">
+        <!-- Conteúdo da sua página -->
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var menuBtn = document.getElementById("toggle-menu-btn");
+        var menu = document.getElementById("menu");
+    
+        menuBtn.addEventListener("click", function() {
+            menu.classList.toggle("active");
+        });
+    });
+    </script>
+
+
     <nav class="menu-lateral"><!--MARIA-->
         <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
             <ul>
                 <li class="item-menu ativo">
                     <a href="#">
                         <span class="icon"><i class="bi bi-house"></i></span>
-                        <a href="livros.html"><span class=text-link>Livros</span></a>
+                        <a href="tela_livros.html"><span class=text-link>Livros</span></a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
                         <span class="icon"><i class="bi bi-book"></i>
                         </span></span>
-                        <a href="andamento.html"><span class=text-link>Generos</span></a>
+                        <a href="tela_and.html"><span class=text-link>Generos</span></a>
                     </a>
                 </li>
                 <li class="item-menu">
@@ -51,92 +130,92 @@
                 <li class="item-menu">
                     <a href="#">
                         <span class="icon"><i class="bi bi-gear"></i></span>
-                        <a href="andamento.html"><span class=text-link>Configurações</span></a>
+                        <a href="tela_and.html"><span class=text-link>Configurações</span></a>
                     </a>
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>>
     <div id="compras" class="tela fundo_fonte">  <!--MARTA-->
         <div class="caixa"> <!--<script src="script.js"></script> CHAMA O ARQUIVO SCRIPT.JS-->
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="img_teste1.JPG" alt="Imagem do produto">
+                    <img src="1.JPG" alt="Imagem do produto">
                 </div>
                 <h3>Título do Produto</h3>
                 <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
+                <button type="button"><a href="tela_comprar.html">Comprar</a></button>
+                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
             </div>
 
 
@@ -145,4 +224,3 @@
     <script src="script.js"></script> <!--CHAMA O ARQUIVO SCRIPT.JS--> <!--MARTA-->
 
 </body>
-</html>

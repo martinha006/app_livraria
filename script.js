@@ -27,53 +27,72 @@ function aumentarQuantidade(row) {
 }
 
 
-let carrinho = [];
-let total = 0;
+// Seu código JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    var menu = document.getElementById("menu");
+    var toggleMenuBtn = document.getElementById("toggle-menu-btn");
 
-function adicionarItem(nome, preco, imagem) {
-    const itemExistente = carrinho.find(item => item.nome == nome);
-
-    if (itemExistente) {
-        itemExistente.quantidade++;
-    } else {
-        carrinho.push({ nome, preco, quantidade: 1, imagem });
-    }
-
-    total += preco;
-    atualizarCarrinho();
-}
-
-function atualizarCarrinho() {
-    const carrinhoLista = document.getElementById("carrinho-lista");
-    const carrinhoTotal = document.getElementById("carrinho-total");
-
-    carrinhoLista.innerHTML = "";
-    carrinhoTotal.textContent = total.toFixed(2);
-
-    carrinho.forEach(item => {
-        const li = document.createElement("li");
-        li.innerHTML = `<img src="${item.imagem}" alt="Imagem do Produto" width="100"> 
-            ${item.nome} | R$ ${item.preco.toFixed(2)} | Quantidade: ${item.quantidade} 
-            <button onclick="removerItem('${item.nome}', ${item.preco})">-</button>
-            <button onclick="adicionarItem('${item.nome}', ${item.preco}, '${item.imagem}')">+</button>`;
-        carrinhoLista.appendChild(li);
+    toggleMenuBtn.addEventListener("click", function() {
+        menu.classList.toggle("hidden");
     });
-}
+});
 
-function removerItem(nome, preco) {
-    const itemExistente = carrinho.find(item => item.nome == nome);
 
-    if (itemExistente) {
-        if (itemExistente.quantidade == 1) {
-            carrinho = carrinho.filter(item => item.nome !== nome);
-        } else {
-            itemExistente.quantidade--;
-        }
+// let carrinho = [];
+// let total = 0;
 
-        total -= preco;
-        atualizarCarrinho();
-    }
-}
+// function adicionarItem(nome, preco, imagem) {
+//     const itemExistente = carrinho.find(item => item.nome == nome);
+
+//     if (itemExistente) {
+//         itemExistente.quantidade++;
+//     } else {
+//         carrinho.push({ nome, preco, quantidade: 1, imagem });
+//     }
+
+//     total += preco;
+//     atualizarCarrinho();
+// }
+
+// function atualizarCarrinho() {
+//     const carrinhoLista = document.getElementById("carrinho-lista");
+//     const carrinhoTotal = document.getElementById("carrinho-total");
+
+//     carrinhoLista.innerHTML = "";
+//     carrinhoTotal.textContent = total.toFixed(2);
+
+//     carrinho.forEach(item => {
+//         const li = document.createElement("li");
+//         li.innerHTML = `<img src="${item.imagem}" alt="Imagem do Produto" width="100"> 
+//             ${item.nome} | R$ ${item.preco.toFixed(2)} | Quantidade: ${item.quantidade} 
+//             <button onclick="removerItem('${item.nome}', ${item.preco})">-</button>
+//             <button onclick="adicionarItem('${item.nome}', ${item.preco}, '${item.imagem}')">+</button>`;
+//         carrinhoLista.appendChild(li);
+//     });
+// }
+
+// function removerItem(nome, preco) {
+//     const itemExistente = carrinho.find(item => item.nome == nome);
+
+//     if (itemExistente) {
+//         if (itemExistente.quantidade == 1) {
+//             carrinho = carrinho.filter(item => item.nome !== nome);
+//         } else {
+//             itemExistente.quantidade--;
+//         }
+
+//         total -= preco;
+//         atualizarCarrinho();
+//     }
+// }
+//                 <button type="button" onclick="adicionarItem('Título do Produto2', 10.99, '1.JPG')">Adicionar ao Carrinho</a></button>
+{/* <div id="carrinho">
+<h2>Carrinho de Compras</h2>
+<ul id="carrinho-lista">
+    <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+</ul>
+<p>Total: R$ <span id="carrinho-total">0</span></p>
+</div> */}
 
 
 
