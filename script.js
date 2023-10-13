@@ -5,39 +5,126 @@ function mostrarTelaCadastro() {
     document.getElementById("detalhar").style.display = "none";
 }
 
-function mostrarTelaCompras() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("cadastro").style.display = "none";
-    document.getElementById("compras").style.display = "block";
-    document.getElementById("detalhar").style.display = "none";
-}
-
-function mostrarTelaDetalhar() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("cadastro").style.display = "none";
-    document.getElementById("compras").style.display = "none";
-    document.getElementById("detalhar").style.display = "block";
-}
-
-function aumentarQuantidade(row) {
-    var quantidadeElement = row.querySelector('.quantidade');
-    var quantidade = parseInt(quantidadeElement.textContent);
-    quantidade += 1;
-    quantidadeElement.textContent = quantidade;
-}
-
-
-// Seu código JavaScript
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    var menuBtn = document.getElementById("toggle-menu");
     var menu = document.getElementById("menu");
-    var toggleMenuBtn = document.getElementById("toggle-menu-btn");
 
-    toggleMenuBtn.addEventListener("click", function() {
-        menu.classList.toggle("hidden");
+    menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
+
+var cart = [];
+
+function addToCart(id) {
+    var product = cart.find((product) => product.id === id);
+    if (product) {
+        product.quantity += 1;
+    } else {
+        var title = document.getElementById("produto" + id).textContent;
+        var price = parseFloat(document.getElementById("preco" + id).textContent.replace("Preço: $", ""));
+        cart.push({ id, title, price, quantity: 1 });
+    }
+
+    updateCart();
+}
+
+function updateCart() {
+    var cartElement = document.getElementById('menu');
+    var cartTable = cartElement.querySelector('table');
+    cartTable.innerHTML = '';
+
+    cartTable.innerHTML = `
+        <tr>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Qtd</th>
+            <th>Total</th>
+            <th>Ações</th> 
+        </tr>
+    `;
+
+    var total = 0;
+    cart.forEach(function (product) {
+        var productTotal = product.price * product.quantity;
+        total += productTotal;
+        cartTable.innerHTML += `
+            <tr>
+                <td>${product.title}</td>
+                <td>${product.price.toFixed(2)}</td>
+                <td>
+                    <button class="decrement-button" data-id="${product.id}">-</button>
+                    <span class="quantity">${product.quantity}</span>
+                    <button class="increment-button" data-id="${product.id}">+</button>
+                </td>
+                <td>${productTotal.toFixed(2)}</td>
+                <td>
+                    <button class="remove-button" data-id="${product.id}">Exc<button>
+                    <button class="buy-button" data-id="${product.id}">Comp</button>
+                </td>
+            </tr>
+        `;
+    });    
+
+    // Adiciona os botões de incremento e decremento
+    var incrementButtons = cartTable.querySelectorAll('.increment-button');
+    incrementButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var id = parseInt(button.getAttribute('data-id'));
+            var product = cart.find((product) => product.id === id);
+            if (product) {
+                product.quantity += 1;
+                updateCart();
+            }
+        });
+    });
+
+    var decrementButtons = cartTable.querySelectorAll('.decrement-button');
+    decrementButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var id = parseInt(button.getAttribute('data-id'));
+            var product = cart.find((product) => product.id === id);
+            if (product && product.quantity > 1) {
+                product.quantity -= 1;
+                updateCart();
+            }
+        });
+    });
+}
+
+
+var comprarButtons = document.querySelectorAll('.comprar-button');
+comprarButtons.forEach(function (button) {
+    var id = parseInt(button.getAttribute('data-id'));
+    button.addEventListener('click', function () {
+        addToCart(id);
     });
 });
 
 
+
+//function mostrarTelaCompras() {
+//    document.getElementById("login").style.display = "none";
+//    document.getElementById("cadastro").style.display = "none";
+//    document.getElementById("compras").style.display = "block";
+//    document.getElementById("detalhar").style.display = "none";
+//}
+
+//function mostrarTelaDetalhar() {
+//    document.getElementById("login").style.display = "none";
+//    document.getElementById("cadastro").style.display = "none";
+//    document.getElementById("compras").style.display = "none";
+//    document.getElementById("detalhar").style.display = "block";
+//}
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var menu = document.getElementById("menu");
+//     var toggleMenuBtn = document.getElementById("toggle-menu-btn");
+
+//     toggleMenuBtn.addEventListener("click", function() {
+//         menu.classList.toggle("hidden");
+//     });
+// });
 // let carrinho = [];
 // let total = 0;
 
