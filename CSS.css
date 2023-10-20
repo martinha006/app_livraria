@@ -1,8 +1,9 @@
 /*MARTA*/
-.fundo_fonte{
-    background-color: #dddddd;
-    font-family: serif;
-    text-decoration: #000;
+.fundo_fonte {
+    background-color: #ADD8E6; /* Cor azul-claro */
+    padding: 20px;
+    color: #333;
+    font-size: 18px;
 }
 /* Estilos para todas as telas */
 .tela {

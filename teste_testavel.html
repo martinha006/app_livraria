@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,39 +100,4 @@
         }
     </script>
 </body>
-</html> -->
-var qtd = document.getElementById('qtd');
-var incrementButton = document.getElementById('increment');
-var decrementButton = document.getElementById('decrement');
-var priceElement = document.getElementById('price');
-var totalElement = document.getElementById('total');
-
-incrementButton.addEventListener('click', function() {
-  qtd.innerText = parseInt(qtd.innerText) + 1;
-  updateTotal();
-});
-
-decrementButton.addEventListener('click', function() {
-  var currentQtd = parseInt(qtd.innerText);
-  if (currentQtd > 1) {
-    qtd.innerText = currentQtd - 1;
-    updateTotal();
-  }
-});
-
-function updateTotal() {
-  var qtdValue = parseInt(qtd.innerText);
-  var price = parseFloat(priceElement.innerText);
-  var total = qtdValue * price;
-  totalElement.innerText = total.toFixed(2); // Exibindo o total com duas casas decimais
-}
-
-<td>A</td>
-<td id="price">22.00</td>
-<td>
-<button id="decrement">-</button>
-<span id="qtd">1</span>
-<button id="increment">+</button>
-</td>
-<td id="total">22.00</td>
-<tr><button type="button"><a href="tela_comprar.html">Comprar</a></button></tr>
+</html>

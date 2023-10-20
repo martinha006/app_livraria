@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
 var cart = [];
 
 function addToCart(id) {
-    var product = cart.find((product) => product.id === id);
-    if (product) {
-        product.quantity += 1;
+    var produto = cart.find((produto) => produto.id === id);
+    if (produto) {
+        produto.qtd += 1;
     } else {
         var title = document.getElementById("produto" + id).textContent;
         var price = parseFloat(document.getElementById("preco" + id).textContent.replace("Preço: $", ""));
-        cart.push({ id, title, price, quantity: 1 });
+        cart.push({ id, title, price, qtd: 1 });
     }
 
     updateCart();
@@ -40,28 +40,24 @@ function updateCart() {
             <th>Valor</th>
             <th>Qtd</th>
             <th>Total</th>
-            <th>Ações</th> 
         </tr>
     `;
 
     var total = 0;
-    cart.forEach(function (product) {
-        var productTotal = product.price * product.quantity;
-        total += productTotal;
+    cart.forEach(function (produto) {
+        var produtoTotal = produto.price * produto.qtd;
+        total += produtoTotal;
         cartTable.innerHTML += `
             <tr>
-                <td>${product.title}</td>
-                <td>${product.price.toFixed(2)}</td>
+                <td>${produto.title}</td>
+                <td>${produto.price.toFixed(2)}</td>
                 <td>
-                    <button class="decrement-button" data-id="${product.id}">-</button>
-                    <span class="quantity">${product.quantity}</span>
-                    <button class="increment-button" data-id="${product.id}">+</button>
+                    <button class="decrement-button" data-id="${produto.id}">-</button>
+                    <span class="qtd">${produto.qtd}</span>
+                    <button class="increment-button" data-id="${produto.id}">+</button>
                 </td>
-                <td>${productTotal.toFixed(2)}</td>
-                <td>
-                    <button class="remove-button" data-id="${product.id}">Exc<button>
-                    <button class="buy-button" data-id="${product.id}">Comp</button>
-                </td>
+                <td>${produtoTotal.toFixed(2)}</td>
+
             </tr>
         `;
     });    
@@ -71,9 +67,9 @@ function updateCart() {
     incrementButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var id = parseInt(button.getAttribute('data-id'));
-            var product = cart.find((product) => product.id === id);
-            if (product) {
-                product.quantity += 1;
+            var produto = cart.find((produto) => produto.id === id);
+            if (produto) {
+                produto.qtd += 1;
                 updateCart();
             }
         });
@@ -83,9 +79,9 @@ function updateCart() {
     decrementButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var id = parseInt(button.getAttribute('data-id'));
-            var product = cart.find((product) => product.id === id);
-            if (product && product.quantity > 1) {
-                product.quantity -= 1;
+            var produto = cart.find((produto) => produto.id === id);
+            if (produto && produto.qtd > 1) {
+                produto.qtd -= 1;
                 updateCart();
             }
         });
@@ -101,6 +97,29 @@ comprarButtons.forEach(function (button) {
     });
 });
 
+carrinho.forEach(item => {
+    const li = document.createElement("li");
+    li.innerHTML = `${item.nome} - R$ ${item.preco.toFixed(2)} - Quantidade: ${item.quantidade} 
+    <button onclick="removerItem('${item.nome}', ${item.preco})">-</button>
+    <button onclick="adicionarItem('${item.nome}', ${item.preco})">+</button>`;
+    carrinhoLista.appendChild(li);
+});
+
+
+function removerItem(nome, preco) {
+const itemExistente = carrinho.find(item => item.nome === nome);
+
+if (itemExistente) {
+    if (itemExistente.quantidade === 1) {
+        carrinho = carrinho.filter(item => item.nome !== nome);
+    } else {
+        itemExistente.quantidade--;
+    }
+
+    total -= preco;
+    atualizarCarrinho();
+}
+}
 
 
 //function mostrarTelaCompras() {
