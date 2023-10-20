@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="CSS.css">
-    <link rel="stylesheet" href="t.html">
-    <title>MMG</title>
-</head>
+<html>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+}
+
+</style>
+
 <body>
+<<<<<<< HEAD
     <div class="header">
         <div class="nav">
             <div class="centered-search">
@@ -18,101 +26,56 @@
                     </ul>
                 </div>
                 <input placeholder="Pesquisar..." type="text" class="input">
+=======
+>>>>>>> 502717a0b279face69046b3e3eebaed11136ae8a
 
-                <div class="button-container">
-                    <button class="button">FAVORITOS</button>
-                    <button class="button">FAVORITOS</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav class="menu-lateral"><!--MARIA-->
-        <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
-            <ul>
-                <li class="item-menu ativo">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-house"></i></span>
-                        <a href="livros.html"><span class=text-link>Livros</span></a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-book"></i>
-                        </span></span>
-                        <a href="andamento.html"><span class=text-link>Generos</span></a>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-star"></i>
-                        </span>
-                        <a href="tela_top.html"><span class=text-link>Top3</span></a>
-                    </a>
+<h2>A basic HTML table</h2>
 
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-gear"></i></span>
-                        <a href="andamento.html"><span class=text-link>Configurações</span></a>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="compras" class="tela fundo_fonte">  <!--MARTA-->
-        <div class="caixa"> <!--<script src="script.js"></script> CHAMA O ARQUIVO SCRIPT.JS-->
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto</h3>
-                <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
-                <button type="button" onclick="adicionarItem('Título do Produto', 19.99, '1.JPG')">Adicionar ao Carrinho</a></button>
-            </div>
+<table style="width:100%">
+  <tr>
+    <th>produto</th>
+    <th>quantidade</th>
+    <th>valor</th>
+    <th>Total a Pagar</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>
+      <button id="decrement">-</button>
+      <span id="quantity">1</span>
+      <button id="increment">+</button>
+    </td>
+    <td id="price">22.00</td>
+    <td id="total">22.00</td>
+  </tr>
+</table>
+<script>
+  var quantity = document.getElementById('quantity');
+  var incrementButton = document.getElementById('increment');
+  var decrementButton = document.getElementById('decrement');
+  var priceElement = document.getElementById('price');
+  var totalElement = document.getElementById('total');
 
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto2</h3>
-                <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
-                <button type="button" onclick="adicionarItem('Título do Produto2', 10.99, '1.JPG')">Adicionar ao Carrinho</a></button>
+  incrementButton.addEventListener('click', function() {
+    quantity.innerText = parseInt(quantity.innerText) + 1;
+    updateTotal();
+  });
 
-            </div>
+  decrementButton.addEventListener('click', function() {
+    var currentQuantity = parseInt(quantity.innerText);
+    if (currentQuantity > 1) {
+      quantity.innerText = currentQuantity - 1;
+      updateTotal();
+    }
+  });
 
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto</h3>
-                <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
-            </div>
-
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.JPG" alt="Imagem do produto">
-                </div>
-                <h3>Título do Produto</h3>
-                <p>Preço: $19.99</p>
-                <button type="button"><a href="comprar.html">Comprar</a></button>
-                <button type="button"><a href="detalhar.html">Detalhar</a></button>
-            </div>
-
-            <div id="carrinho">
-                <h2>Carrinho de Compras</h2>
-                <ul id="carrinho-lista">
-                    <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
-                </ul>
-                <p>Total: R$ <span id="carrinho-total">0</span></p>
-            </div>
-
-    </div>
-    <script src="script.js"></script> <!--CHAMA O ARQUIVO SCRIPT.JS--> <!--MARTA-->
+  function updateTotal() {
+    var quantityValue = parseInt(quantity.innerText);
+    var price = parseFloat(priceElement.innerText);
+    var total = quantityValue * price;
+    totalElement.innerText = total.toFixed(2); // Exibindo o total com duas casas decimais
+  }
+</script>
 
 </body>
 </html>
