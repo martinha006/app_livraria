@@ -34,7 +34,7 @@
 
 /* Estilos específicos para a tela de compras */
 #compras .caixa {
-    margin: 5px;
+    margin: 0%;
     width: 100%; /* Alterado para ocupar 100% da largura */
     display: flex; /* Alterado para usar flexbox */
     flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */

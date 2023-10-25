@@ -1,1 +1,32 @@
-mahfguagdf\shdf,kjwgfiluiulu
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+</head>
+<body>
+    <h1>CRUD App</h1>
+    <form action="/add" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Registros:</h2>
+    <ul>
+        {% for record in data %}
+            <li>
+                {{ record[1] }}
+                <form action="/update" method="POST">
+                    <input type="hidden" name="id" value="{{ record[0] }}">
+                    <input type="text" name="novo_nome" placeholder="Novo nome" required>
+                    <button type="submit">Atualizar</button>
+                </form>
+                <a href="/delete/{{ record[0] }}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

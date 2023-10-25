@@ -40,6 +40,7 @@ function updateCart() {
             <th>Valor</th>
             <th>Qtd</th>
             <th>Total</th>
+            <th>Ações</th> 
         </tr>
     `;
 
@@ -57,29 +58,32 @@ function updateCart() {
                     <button class="increment-button" data-id="${produto.id}">+</button>
                 </td>
                 <td>${produtoTotal.toFixed(2)}</td>
-
+                <td>
+                    <button class="remove-button" data-id="${produto.id}">Exc<button> 
+                    <button class="buy-button" data-id="${produto.id}">Comp</button>
+                </td>
             </tr>
         `;
-    });    
+    }); 
 
-    // Adiciona os botões de incremento e decremento
+    //incremento
     var incrementButtons = cartTable.querySelectorAll('.increment-button');
     incrementButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var id = parseInt(button.getAttribute('data-id'));
-            var produto = cart.find((produto) => produto.id === id);
+            var produto = cart.find((produto) => produto.id == id);
             if (produto) {
                 produto.qtd += 1;
                 updateCart();
             }
         });
     });
-
+    //decremento
     var decrementButtons = cartTable.querySelectorAll('.decrement-button');
     decrementButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var id = parseInt(button.getAttribute('data-id'));
-            var produto = cart.find((produto) => produto.id === id);
+            var produto = cart.find((produto) => produto.id == id);
             if (produto && produto.qtd > 1) {
                 produto.qtd -= 1;
                 updateCart();
@@ -97,29 +101,7 @@ comprarButtons.forEach(function (button) {
     });
 });
 
-carrinho.forEach(item => {
-    const li = document.createElement("li");
-    li.innerHTML = `${item.nome} - R$ ${item.preco.toFixed(2)} - Quantidade: ${item.quantidade} 
-    <button onclick="removerItem('${item.nome}', ${item.preco})">-</button>
-    <button onclick="adicionarItem('${item.nome}', ${item.preco})">+</button>`;
-    carrinhoLista.appendChild(li);
-});
 
-
-function removerItem(nome, preco) {
-const itemExistente = carrinho.find(item => item.nome === nome);
-
-if (itemExistente) {
-    if (itemExistente.quantidade === 1) {
-        carrinho = carrinho.filter(item => item.nome !== nome);
-    } else {
-        itemExistente.quantidade--;
-    }
-
-    total -= preco;
-    atualizarCarrinho();
-}
-}
 
 
 //function mostrarTelaCompras() {
