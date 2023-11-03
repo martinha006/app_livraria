@@ -11,26 +11,23 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="script.js"></script>
 <body class="imagem">
-        <div id="login" class="tela"> <!--MARIA-->
-            <h1>Login</h1>
-            <form>
-                <h2>Email<input type="text" placeholder=""></h2>
-                <h2>Senha<input type="password" placeholder=""></h2>
-                <!-- <button type="button" onclick="mostrarTelaCompras()">Continuar</button> -->
-                <button type="button"><a href="tela_livros.html">Continuar</a></button>
-                <p>Não tem uma conta? <a href="#" onclick="mostrarTelaCadastro()" class="link-registro">Cadastrar-se</a></p>
-            </form>
-        </div>
-    <div id="cadastro" class="tela" style="display: none;"> <!--MARTA-->
-        <h1>Cadastrar</h1>
-        <form>
-            <h2>Email<input type="text" placeholder=""></h2>
-            <h2>Senha<input type="password" placeholder=""></h2>
-            <!-- <button type="button" onclick="mostrarTelaCompras()">Enviar</button><br> -->
-            <button type="button"><a href="tela_livros.html">Enviar</a></button>
+    <div id="login" class="tela"> <!--MARIA-->
+        <h1>Login</h1>
+        <form method="post" action="/login"> <!-- POST é um método HTTP utilizado em formulários HTML para enviar dados de forma segura ao servidor.// ação de login-->
+            <h2>Email <input type="text" name="email" placeholder=""></h2>
+            <h2>Senha <input type="password" name="senha" placeholder=""></h2>
+            <button type="submit">Continuar</button>
+            <p>Não tem uma conta? <a href="#" class="link-registro" onclick="mostrarTelaCadastro()">Cadastrar-se</a></p>
         </form>
     </div>
-
-
+    
+    <div id="cadastro" class="tela" style="display: none;"> <!--MARTA-->
+        <h1>Cadastrar</h1>
+        <form method="post" action="/add"> <!--Ação de adicionar conteudo/inserir-->
+            <h2>Email <input type="text" name="email" placeholder="Gatinho_galactico"></h2>
+            <h2>Senha <input type="password" name="senha" placeholder=""></h2>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>

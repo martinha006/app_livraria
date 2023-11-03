@@ -19,7 +19,6 @@
     border-radius: 10px;/*linha da borda*/
     color: rgb(225, 222, 222);
     background-color: #5f4e4e9f;
-
     }
 
 .tela a {/*é como se fosse uma função*/
@@ -207,6 +206,7 @@ ul li.item-menu a .icon > i{
 .input {
     width: 100%;
     height: 60px;
+    width: 200%;
     line-height: 28px;
     padding: 0 1rem;
     padding-left: 2.5rem;

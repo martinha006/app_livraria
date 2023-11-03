@@ -59,8 +59,8 @@ function updateCart() {
                 </td>
                 <td>${produtoTotal.toFixed(2)}</td>
                 <td>
-                    <button class="remove-button" data-id="${produto.id}">Exc<button> 
-                    <button class="buy-button" data-id="${produto.id}">Comp</button>
+                    <button class="remove-button" data-id="${produto.id}">E<button> 
+                    <button class="buy-button" data-id="${produto.id}">C</button>
                 </td>
             </tr>
         `;
