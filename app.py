@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template
-import mysql
+from flask import Flask, request, render_template, redirect
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -7,9 +7,10 @@ app = Flask(__name__)
 db = mysql.connector.connect(host="localhost", user="root", password="", database="livraria")
 cursor = db.cursor()
 
+
 @app.route('/')
 def index():
-    return render_template('index.html', id="login")
+    return render_template('index.html')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -25,7 +26,7 @@ def login():
         else:
             # Credenciais inválidas, redireciona de volta para a página de login
             return redirect('/')
-
+            
 @app.route('/app_livraria/add', methods=['POST'])
 def add():
     if request.method == 'POST':
@@ -35,6 +36,8 @@ def add():
         cursor.execute("INSERT INTO usuario (email, senha) VALUES (%s, %s)", (email, senha))
         db.commit()
     return redirect('/')
+
+# Descomente as rotas abaixo se precisar de funcionalidades de atualização e exclusão
 
 # @app.route('/update', methods=['POST'])
 # def update():
@@ -55,18 +58,3 @@ def add():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-# from flask import Flask, render_template
-
-# app = Flask(__name__)
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
