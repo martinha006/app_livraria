@@ -1,9 +1,9 @@
-function mostrarTelaCadastro() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("cadastro").style.display = "block";
-    document.getElementById("compras").style.display = "none";
-    document.getElementById("detalhar").style.display = "none";
-}
+// function mostrarTelaCadastro() {
+//     document.getElementById("login").style.display = "none";
+//     document.getElementById("cadastro").style.display = "block";
+    // document.getElementById("compras").style.display = "none";
+    // document.getElementById("detalhar").style.display = "none";
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
     var menuBtn = document.getElementById("toggle-menu");

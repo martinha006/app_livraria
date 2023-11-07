@@ -7,27 +7,26 @@ app = Flask(__name__)
 db = mysql.connector.connect(host="localhost", user="root", password="", database="livraria")
 cursor = db.cursor()
 
-
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('tela_cad.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/index.html', methods=['POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
         # Verifica as credenciais no banco de dados
-        cursor.execute("SELECT * FROM usuario WHERE email=%s AND senha=%s", (email, senha))
+        cursor.execute("SELECT * FROM usuario WHERE usu_email=%s AND usu_senha=%s", (email, senha))
         data = cursor.fetchall()
         if data:
             # Credenciais válidas, redireciona para a página desejada (por exemplo, tela_livros.html)
-            return redirect('./tela_livros.html')
+            return redirect('tela_livros.html')
         else:
             # Credenciais inválidas, redireciona de volta para a página de login
             return redirect('/')
             
-@app.route('/app_livraria/add', methods=['POST'])
+@app.route('/tela_cad.html', methods=['POST'])
 def add():
     if request.method == 'POST':
         email = request.form['email']
@@ -37,7 +36,6 @@ def add():
         db.commit()
     return redirect('/')
 
-# Descomente as rotas abaixo se precisar de funcionalidades de atualização e exclusão
 
 # @app.route('/update', methods=['POST'])
 # def update():
