@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS.css">
+  <link rel="stylesheet" href="../static/css/CSS.css">
   <title>MMG</title>
-
 </head>
 <body> <!--style="background-color: #d3b195;"-->
-  <div class="button-container">
-    <button class="button"><a href="tela_login.html" style="color: white;">Login</button>
-    <button class="button"><a href="tela_cad.html" style="color: white;">Cadastrar-se</button>
+  <div id="botoes" class="button-container">
+    <a href="{{ url_for('simulate_login') }}" class="button" style="color: white;">Login</a>
+    <a href="{{ url_for('simulate_add') }}" class="button" style="color: white;">Cadastrar-se</a>
   </div>
 
   <p class="tela_inicial">Viaje através dos livros</p>
   <p class="a">MMG a melhor livraria de todas</p>
 
   <h1 class="rodape">A marta está cansada!</h1>
+
 </body>
 </html>
