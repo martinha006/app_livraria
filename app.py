@@ -44,7 +44,10 @@ def add():
         # Insere um novo registro no banco de dados
         cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha))
         db.commit()
-    return redirect('tela_livros.html')
+        if db == True:
+            return redirect('/tela_livros.html')
+        else:
+            return 'a'
 
 if __name__ == '__main__':
     app.run(debug=True)
