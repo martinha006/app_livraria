@@ -44,10 +44,16 @@ def add():
         # Insere um novo registro no banco de dados
         cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha))
         db.commit()
-        if db == True:
-            return redirect('/tela_livros.html')
-        else:
-            return 'a'
+        db.close()  # Feche a conexão com o banco de dados após o uso
+
+        # Redireciona para a página de livros após o cadastro bem-sucedido
+        return redirect('/tela_livros')
+
+    return 'Algo deu errado no cadastro'
+
+@app.route('/tela_livros')
+def tela_livros():
+    return render_template('tela_livros.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
