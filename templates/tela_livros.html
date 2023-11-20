@@ -13,7 +13,7 @@
             <div class="centered-search">
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <img class="titulo" src="2.jpg" alt="Logo da Sua Empre">
+                        <img class="titulo" src="../static/images/2.jpg" alt="Logo da Sua Empre">
                     </svg>
                 </div>
                 <input placeholder="Pesquisar..." type="text" class="input">
@@ -73,45 +73,40 @@
     </nav>
 
     <div id="compras" class="tela fundo_fonte">
+        <h1>POR QUEEEEEEEEE NÃAO FUNCIONAAAAA</h1>
+        {% if produto %}
         <div class="caixa">
             <div class="caixinha">
                 <div class="imagem">
-                    <img src="1.jpg" alt="Imagem do produto">
+                    <img src="{{ produto[0] }}.jpg" alt="Imagem do produto">
                 </div>
-                <h3 id="produto1">Título do Produto 1</h3>
-                <p id="preco1">Preço: $19.99</p>
-                <button type="button" class="comprar-button" data-id="1">Comprar</button>
-                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
-            </div>
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.jpg" alt="Imagem do produto">
-                </div>
-                <h3 id="produto2">Título do Produto 2</h3>
-                <p id="preco2">Preço: $66.99</p>
-                <button type="button" class="comprar-button" data-id="2">Comprar</button>
-                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
-            </div>
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.jpg" alt="Imagem do produto">
-                </div>
-                <h3 id="produto3">Título do Produto 3</h3>
-                <p id="preco3">Preço: $109.99</p>
-                <button type="button" class="comprar-button" data-id="3">Comprar</button>
-                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
-            </div>
-            <div class="caixinha">
-                <div class="imagem">
-                    <img src="1.jpg" alt="Imagem do produto">
-                </div>
-                <h3 id="produto4">Título do Produto 4</h3>
-                <p id="preco4">Preço: $266.99</p>
-                <button type="button" class="comprar-button" data-id="4">Comprar</button>
-                <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+                <h3 id="produto{{ produto[1] }}">{{ pr_titulo[1] }}</h3>
+                <p id="preco{{ produto[1] }}">Preço: ${{ pr_preco[1] }}</p>
+                <p id="quantidade{{ produto[1] }}">Quantidade: {{ pr_qtd[1] }}</p>
+                <p id="descricao{{ produto[1] }}">Descrição: {{ pr_descricao[1] }}</p>
+                <p id="categoria{{ produto[1] }}">Categoria ID: {{ pr_cat_id[1] }}</p>
             </div>
         </div>
-        
+        {% else %}
+
+        <div class="caixinha">
+            <div class="imagem">
+                <img src="../static/images/1.jpg" alt="Imagem do produto">
+            </div>
+            <h3 id="produto3">Título do Produto 3</h3>
+            <p id="preco3">Preço: $109.99</p>
+            <button type="button" class="comprar-button" data-id="3">Comprar</button>
+            <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+        </div>
+        <div class="caixinha">
+            <div class="imagem">
+                <img src="../static/images/1.jpg" alt="Imagem do produto">
+            </div>
+            <h3 id="produto3">Título do Produto 3</h3>
+            <p id="preco3">Preço: $109.99</p>
+            <button type="button" class="comprar-button" data-id="3">Comprar</button>
+            <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+        </div>
     </div>
 
     <script src="..static/css/script.js"></script>

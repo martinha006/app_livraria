@@ -41,19 +41,31 @@ def add():
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
-        # Insere um novo registro no banco de dados
-        cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha))
+        cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha)) # Insere um novo registro no banco de dados
         db.commit()
-        db.close()  # Feche a conexão com o banco de dados após o uso
+        cursor.execute("SELECT * FROM produto WHERE pr_id=1") # pr_id, pr_titulo, pr_preco
+        prt = cursor.fetchall()
+        return redirect('/tela_livros', produto=prt)
 
-        # Redireciona para a página de livros após o cadastro bem-sucedido
-        return redirect('/tela_livros')
-
-    return 'Algo deu errado no cadastro'
+    # return 'Algo deu errado no cadastro'
 
 @app.route('/tela_livros')
 def tela_livros():
     return render_template('tela_livros.html')
+
+# @app.route('/compras')
+# def compras():
+#     # Recupera os produtos do banco de dados
+
+#     return render_template('tela_livro.html')
+
+# Rota para a página de detalhes do produto
+@app.route('/detalhar/<int:produto_id>')
+def detalhar(pr_id):
+    # Recupera os detalhes do produto do banco de dados
+    cursor.execute("SELECT * FROM produto WHERE pr_id = %s", (pr_id,))
+    produto = cursor.fetchone()
+    return render_template('detalhar.html', produto=produto)
 
 if __name__ == '__main__':
     app.run(debug=True)
