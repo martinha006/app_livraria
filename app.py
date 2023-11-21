@@ -25,8 +25,11 @@ def login():
         cursor.execute("SELECT * FROM usuario WHERE usu_email=%s AND usu_senha=%s", (email, senha))
         data = cursor.fetchall()
         if data:
+            cursor.execute("SELECT * FROM produto WHERE pr_id=1") # pr_id, pr_titulo, pr_preco
+            prt = cursor.fetchall()
+            return render_template('/tela_livros.html', produto=prt)
             # Credenciais válidas, redireciona para a página desejada (por exemplo, tela_livros.html)
-            return render_template('tela_livros.html', dados=data)
+            # return render_template('tela_livros.html', dados=data)
         else:
             # Credenciais inválidas, redireciona de volta para a página de login
             return render_template('tela_login.html')
@@ -45,13 +48,21 @@ def add():
         db.commit()
         cursor.execute("SELECT * FROM produto WHERE pr_id=1") # pr_id, pr_titulo, pr_preco
         prt = cursor.fetchall()
-        return redirect('/tela_livros', produto=prt)
+        return render_template('/tela_livros.html', produto=prt)
 
     # return 'Algo deu errado no cadastro'
 
-@app.route('/tela_livros')
-def tela_livros():
-    return render_template('tela_livros.html')
+# @app.route('/tela_livros')
+# def tela_livros():
+#     return render_template('tela_livros.html')
+
+@app.route('/simulate_compra')
+def simulate_compra():
+    return render_template('../static/css/script.js')
+
+@app.route('/simulate_det')
+def simulate_det():
+    return render_template('detalhar.html')
 
 # @app.route('/compras')
 # def compras():
