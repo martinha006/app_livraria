@@ -73,26 +73,17 @@
     </nav>
 
     <div id="compras" class="tela fundo_fonte">
-        <h1>POR QUEEEEEEEEE NÃAO FUNCIONAAAAA</h1>
+        <h1>ESTA FUNCIONANDO</h1>
         {% for p in produto %}
             <div class="caixa">
-                <div class="caixinha" style="float:left">
+                <div class="caixinha">
                     <div class="imagem">
                         <img src="../static/images/1.jpg" alt="Imagem do produto">
                     </div>
                     <h3>{{ p[1]}}</h3>
                     <p>R$:{{p[2]}}</p>
-                    <button type="button" class="comprar-button" data-id="3">Comprar</button>
-                    <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
-                </div>
-                <div class="caixinha" style="float:left">
-                    <div class="imagem">
-                        <img src="../static/images/1.jpg" alt="Imagem do produto">
-                    </div>
-                    <h3>{{ p[1]}}</h3>
-                    <p>R$:{{p[2]}}</p>
-                    <button type="button" class="comprar-button" data-id="3">Comprar</button>
-                    <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
+                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
                 </div>
                 <div class="caixinha">
                     <div class="imagem">
@@ -100,8 +91,8 @@
                     </div>
                     <h3>{{ p[1]}}</h3>
                     <p>R$:{{p[2]}}</p>
-                    <button type="button" class="comprar-button" data-id="3">Comprar</button>
-                    <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
+                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
                 </div>
                 <div class="caixinha">
                     <div class="imagem">
@@ -109,8 +100,17 @@
                     </div>
                     <h3>{{ p[1]}}</h3>
                     <p>R$:{{p[2]}}</p>
-                    <button type="button" class="comprar-button" data-id="3">Comprar</button>
-                    <button type="button"><a href="tela_detalhar.html">Detalhar</a></button>
+                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
+                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
+                </div>
+                <div class="caixinha">
+                    <div class="imagem">
+                        <img src="../static/images/1.jpg" alt="Imagem do produto">
+                    </div>
+                    <h3>{{ p[1]}}</h3>
+                    <p>R$:{{p[2]}}</p>
+                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
+                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
                 </div>
             </div>
         </div>
