@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/CSS.css">
+    <title>Detalhes do Produto</title>
+</head>
+
+<body>
+    {% for p in produto %}
+        <div class="caixa" style="color:black">
+            ID: {{ p[0] }}
+            Título: {{ p[1] }}
+            Preço: R$:{{ p[2] }}
+            Quantidade: {{ p[3] }}
+            Descrição: {{ p[4] }}
+            Categoria ID: {{ p[5] }}
+        </div>
+    {% endfor %}
+    
+</body>
+
+</html>
+
