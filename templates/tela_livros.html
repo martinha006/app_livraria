@@ -13,7 +13,7 @@
             <div class="centered-search">
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <img class="titulo" src="../static/images/2.jpg" alt="Logo da Sua Empre">
+                        <img class="titulo" src="../static/images/2.jpg" alt="">
                     </svg>
                 </div>
                 <input placeholder="Pesquisar..." type="text" class="input">
@@ -75,46 +75,17 @@
     <div id="compras" class="tela fundo_fonte">
         <h1>EU NÃO SEI FAZER ISSO</h1>
         {% for p in produto %}
-            <div class="caixa">
                 <div class="caixinha">
                     <div class="imagem">
                         <img src="../static/images/1.jpg" alt="Imagem do produto">
                     </div>
                     <h3>{{ p[1] }}</h3>
                     <p>R$: {{ p[2] }}</p>
-                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
-                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
+                    <form action="{{ url_for('simulate_det') }}" method="post">
+                        <input type="hidden" name="titulo" value="{{ p[1] }}">
+                        <button type="submit">Detalhar</button>
+                    </form>
                 </div>
-                <div class="caixinha">
-                    <div class="imagem">
-                        <img src="../static/images/1.jpg" alt="Imagem do produto">
-                    </div>
-                    <h3>{{ p[1]}}</h3>
-                    <p>R$:{{p[2]}}</p>
-                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
-                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
-                </div>
-                <div class="caixinha">
-                    <div class="imagem">
-                        <img src="../static/images/1.jpg" alt="Imagem do produto">
-                    </div>
-                    <h3>{{ p[1]}}</h3>
-                    <p>R$:{{p[2]}}</p>
-                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
-                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
-                </div>
-                <div class="caixinha">
-                    <div class="imagem">
-                        <img src="../static/images/1.jpg" alt="Imagem do produto">
-                    </div>
-                    <h3>{{ p[1]}}</h3>
-                    <p>R$:{{p[2]}}</p>
-                    <button><a href="{{ url_for('simulate_compra') }}">Comprar</a></button>
-                    <button><a href="{{ url_for('simulate_det') }}">Detalhar</a></button>
-                </div>
-            </div>
-        </div>
-
         {% endfor %}
     </div>
 

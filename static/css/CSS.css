@@ -38,6 +38,7 @@
     display: flex; /* Alterado para usar flexbox */
     flex-wrap: wrap; /* Permite que as caixas quebrem para a próxima linha */
     justify-content: space-between;
+    position:static;
 }
 
 #compras .caixinha {
@@ -51,6 +52,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     float: left; /* Para alinhar as caixas lado a lado */
+    size: 20%;
 }
 
 #compras .caixinha:hover {

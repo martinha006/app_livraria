@@ -26,7 +26,7 @@ def login():
         data = cursor.fetchall()
         if data:
             # Credenciais válidas, redireciona para a página desejada (por exemplo, tela_livros.html)
-            cursor.execute("SELECT * FROM produto WHERE pr_id=1")
+            cursor.execute("SELECT * FROM produto")
             prt = cursor.fetchall()
             return render_template('/tela_livros.html', produto=prt)
         else:
@@ -45,7 +45,7 @@ def add():
         senha = request.form['senha']
         cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha))
         db.commit()
-        cursor.execute("SELECT * FROM produto") # pr_id, pr_titulo, pr_preco WHERE pr_id=1
+        cursor.execute("SELECT * FROM produto")
         prt = cursor.fetchall()
         return render_template('/tela_livros.html', produto=prt)
 
@@ -54,9 +54,12 @@ def add():
 def simulate_compra():
     return render_template('../static/css/script.js')
 
-@app.route('/simulate_det')
+@app.route('/simulate_det', methods=['POST'])
 def simulate_det():
-    return render_template('detalhar.html')
+    titulo = request.form['titulo']
+    cursor.execute("SELECT * FROM produto WHERE pr_titulo = %s", (titulo,))
+    prt = cursor.fetchall()
+    return render_template('detalhar.html', produto=prt)
 
 # # Rota para a página de detalhes do produto
 # @app.route('/detalhar/<int:pr_id>')
