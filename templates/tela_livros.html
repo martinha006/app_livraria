@@ -85,6 +85,10 @@
                         <input type="hidden" name="titulo" value="{{ p[1] }}">
                         <button type="submit">Detalhar</button>
                     </form>
+                    <form action="{{ url_for('simulate_compra') }}" method="post">
+                        <input type="hidden" name="titulo" value="{{ p[1] }}">
+                        <button type="submit">Comprar</button>
+                    </form>
                 </div>
         {% endfor %}
     </div>

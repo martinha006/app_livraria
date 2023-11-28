@@ -72,27 +72,23 @@
             </ul>
         </div>
     </nav>
-    <div class="recipiente">
+    <div>
         <div class="news-item">
             <div class="tp">
-                <div class="imagem">
+                <div >
                     <img src="../static/images/1.jpg" alt="Imagem do produto">
                 </div>
-                {% for p in produto %}
-                    <div class="caixa" style="color:black">
-                        ID: {{ p[0] }}      Categoria ID: {{ p[5] }} <br>
-                        Título: {{ p[1] }} <br>
-                        Quantidade: {{ p[3] }}      Preço: R$:{{ p[2] }} <br>
-                    </div>
-                {% endfor %}
+                    {% for p in produto %}
+                        <div class="caixa" style="color:black">
+                            ID: {{ p[0] }}      Categoria ID: {{ p[5] }} <br>
+                            Título: {{ p[1] }} <br>
+                            Quantidade: {{ p[3] }}      Preço: R$:{{ p[2] }} <br>
+                            <p>Descrição:</p>
+                            <p>{{ p[4] }}</p>            
+                        </div>
+                        <button type="button" class="tp" style="text-align: center;"><a href="tela_comprar.html">Comprar</a></button>
+                    {% endfor %}
             </div>
-            <div class="descricao-box" style="font-size: 20px; float: left">
-                {% for p in produto %}
-                    <p>Descrição:</p>
-                    <p>{{ p[4] }}</p>
-                {% endfor %}            
-            </div>
-            <button type="button" class="tp" style="text-align: center;"><a href="tela_comprar.html">Comprar</a></button>
         </div>
 
     </div>

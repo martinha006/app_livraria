@@ -52,7 +52,11 @@ def add():
 
 @app.route('/simulate_compra')
 def simulate_compra():
-    return render_template('../static/css/script.js')
+    titulo = request.form['titulo']
+    valor = request.form['valor']
+    cursor.execute("SELECT * FROM produto WHERE pr_preco = %s", (valor,titulo))
+    prt = cursor.fetchall()
+    return render_template('toggle-menu', produto=prt) # TA ERRADO
 
 @app.route('/simulate_det', methods=['POST'])
 def simulate_det():
