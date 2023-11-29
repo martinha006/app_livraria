@@ -508,3 +508,19 @@ ul li.item-menu a .icon > i{
     flex-wrap: wrap;
     color: white;
 }
+
+/* Categoria */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 7%;
+    margin-left: 25%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}

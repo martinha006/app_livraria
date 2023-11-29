@@ -5,22 +5,6 @@
     // document.getElementById("detalhar").style.display = "none";
 // }
 
-// Obtendo referências aos botões
-const botaoLogin = document.getElementById("login");
-const botaoCadastro = document.getElementById("cad");
-
-// Função para lidar com o clique no botão Entrar
-function handleLoginClick() {
-    alert("Você clicou no botão Entrar!");
-    // Lógica para o botão Entrar aqui
-}
-
-// Função para lidar com o clique no botão Cadastrar-se
-function handleCadastroClick() {
-    alert("Você clicou no botão Cadastrar-se!");
-    // Lógica para o botão Cadastrar-se aqui
-}
-
 // Adicionando event listeners aos botões
 botaoLogin.addEventListener("click", handleLoginClick);
 botaoCadastro.addEventListener("click", handleCadastroClick);

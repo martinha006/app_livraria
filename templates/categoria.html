@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/CSS.css">
+    <title>MMG</title>
+
+</head>
+<body>
+    {% for p in produto %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>ID da Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ p[0] }}</td>
+                    <td>{{ p[1] }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    {% endfor %}
+
+</body>
+</html>

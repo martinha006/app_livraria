@@ -51,7 +51,7 @@
                     <a href="#">
                         <span class="icon"><i class="bi bi-book"></i>
                         </span></span>
-                        <a href="tela_and.html"><span class=text-link>Generos</span></a>
+                        <a href="{{ url_for('categoria') }}"style="color: white;"><span class=text-link>Categorias</span</a>
                     </a>
                 </li>
                 <li class="item-menu">
@@ -81,6 +81,7 @@
                     </div>
                     <h3>{{ p[1] }}</h3>
                     <p>R$: {{ p[2] }}</p>
+                    
                     <form action="{{ url_for('simulate_det') }}" method="post">
                         <input type="hidden" name="titulo" value="{{ p[1] }}">
                         <button type="submit">Detalhar</button>
