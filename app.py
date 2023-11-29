@@ -55,7 +55,6 @@ def categoria():
         prt = cursor.fetchall()
         return render_template('/categoria.html', produto=prt)
 
-
 @app.route('/simulate_compra')
 def simulate_compra():
     titulo = request.form['titulo']
