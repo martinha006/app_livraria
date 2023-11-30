@@ -20,6 +20,10 @@
 
                     <div class="button-container">
                         <button class="button">FAVORITOS</button>
+                        <form action="{{ url_for('simulate_carrinho') }}" method="post">
+                            <input type="hidden" name="titulo" value="{{ p[1] }}">
+                            <button type="submit">CARRINHO</button>
+                        </form>
                         <button id="toggle-menu" class="button">CARRINHO</button> <!--id="toggle-menu-btm"-->
 
 
@@ -34,7 +38,7 @@
                 <li class="item-menu ativo">
                     <a href="#">
                         <span class="icon"><i class="bi bi-house"></i></span>
-                        <a href="tela_livros.html"><span class=text-link>Livros</span></a>
+                        <p href="tela_livros.html"><span class=text-link>Livros</span></p>
                     </a>
                 </li>
                 <li class="item-menu">
@@ -42,46 +46,46 @@
                         <span class="icon"><i class="bi bi-book"></i></span>
                         <form action="{{ url_for('simulate_categoria') }}" method="post">
                             <input type="hidden" name="titulo" value="{{ produto[0][1] }}">
-                            <button type="submit" class="text-link">Categorias</button>
+                            <button type="submit" class="text-link" style="font-size: 100%; background-color: #906749;
+                            color: white; border: none">Categorias</button>
                         </form>
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
                         <span class="icon"><i class="bi bi-star"></i></span>
-                        <a href="tela_top.html"><span class=text-link>Top3</span></a>
+                        <p href="tela_top.html"><span class=text-link>Top3</span></p>
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
                         <span class="icon"><i class="bi bi-gear"></i></span>
-                        <a href="tela_and.html"><span class=text-link>Configurações</span></a>
+                        <p href="tela_and.html"><span class=text-link>Configurações</span></p>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
     
-
     <div id="compras" class="tela fundo_fonte">
         <h1>EU NÃO SEI FAZER ISSO</h1>
         {% for p in produto %}
-                <div class="caixinha">
-                    <div class="imagem">
-                        <img src="../static/images/1.jpg" alt="Imagem do produto">
-                    </div>
-                    <h3>{{ p[1] }}</h3>
-                    <p>R$: {{ p[2] }}</p>
-                    
-                    <form action="{{ url_for('simulate_det') }}" method="post">
-                        <input type="hidden" name="titulo" value="{{ p[1] }}">
-                        <button type="submit">Detalhar</button>
-                    </form>
-                    <form action="{{ url_for('simulate_compra') }}" method="post">
-                        <input type="hidden" name="titulo" value="{{ p[1] }}">
-                        <button type="submit">Comprar</button>
-                    </form>
+            <div class="caixinha">
+                <div class="imagem">
+                    <img src="../static/images/1.jpg" alt="Imagem do produto">
                 </div>
+                <h3>{{ p[1] }}</h3>
+                <p>R$: {{ p[2] }}</p>
+                
+                <form action="{{ url_for('simulate_det') }}" method="post">
+                    <input type="hidden" name="titulo" value="{{ p[1] }}">
+                    <button type="submit">Detalhar</button>
+                </form>
+                <form action="{{ url_for('simulate_compra') }}" method="post">
+                    <input type="hidden" name="titulo" value="{{ p[1] }}">
+                    <button type="submit">Comprar</button>
+                </form>
+            </div>
         {% endfor %}
     </div>
 

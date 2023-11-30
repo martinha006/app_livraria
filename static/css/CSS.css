@@ -513,8 +513,9 @@ ul li.item-menu a .icon > i{
 table {
     width: 50%;
     border-collapse: collapse;
-    margin-top: 7%;
+    margin-top: 10%;
     margin-left: 25%;
+    position: fixed;
 }
 th, td {
     border: 1px solid #ddd;

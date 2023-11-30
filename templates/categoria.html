@@ -7,6 +7,64 @@
     <title>MMG</title>
 </head>
 <body>
+    <div class="header">
+        <div class="nav">
+            <div class="centered-search">
+                <div class="group">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <img class="titulo" src="../static/images/2.jpg" alt="">
+                    </svg>
+                    </div>
+                    <input placeholder="Pesquisar..." type="text" class="input">
+
+                    <div class="button-container">
+                        <button class="button">FAVORITOS</button>
+                        <form action="{{ url_for('simulate_carrinho') }}" method="post">
+                            <input type="hidden" name="titulo" value="{{ p[1] }}">
+                            <button type="submit">CARRINHO</button>
+                        </form>
+                        <button id="toggle-menu" class="button">CARRINHO</button> <!--id="toggle-menu-btm"-->
+
+
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <nav class="menu-lateral"><!--MARIA-->
+        <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
+            <ul>
+                <li class="item-menu ativo">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-house"></i></span>
+                        <p href="tela_livros.html"><span class=text-link>Livros</span></p>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-book"></i></span>
+                        <form action="{{ url_for('simulate_categoria') }}" method="post">
+                            <input type="hidden" name="titulo" value="{{ produto[0][1] }}">
+                            <button type="submit" class="text-link" style="font-size: 100%; background-color: #906749;
+                            color: white; border: none">Categorias</button>
+                        </form>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-star"></i></span>
+                        <p href="tela_top.html"><span class=text-link>Top3</span></p>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-gear"></i></span>
+                        <p href="tela_and.html"><span class=text-link>Configurações</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <table>
         <thead>
             <tr>
@@ -17,8 +75,8 @@
         <tbody>
             {% for c in categoria %}
                 <tr>
-                    <td>{{ c[0] }}</td>
                     <td>{{ c[1] }}</td>
+                    <td>{{ c[0] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
