@@ -49,11 +49,11 @@ def add():
         prt = cursor.fetchall()
         return render_template('/tela_livros.html', produto=prt)
 
-@app.route('/categoria', methods=['POST']) # NAO ESTA COMPLETO
-def categoria():
-        cursor.execute("SELECT * FROM produto")
-        prt = cursor.fetchall()
-        return render_template('/categoria.html', produto=prt)
+@app.route('/simulate_categoria', methods=['POST']) # NAO ESTA COMPLETO
+def simulate_categoria():
+        cursor.execute("SELECT * FROM categoria")
+        cat = cursor.fetchall()
+        return render_template('/categoria.html', categoria=cat)
 
 @app.route('/simulate_compra')
 def simulate_compra():
@@ -61,7 +61,7 @@ def simulate_compra():
     valor = request.form['valor']
     cursor.execute("SELECT * FROM produto WHERE pr_preco = %s, pr_titulo = %s", (valor,titulo))
     prt = cursor.fetchall()
-    return render_template('toggle-menu', produto=prt) # TA ERRADO
+    return render_template('crrinho.html', produto=prt) # TA ERRADO
 
 @app.route('/simulate_det', methods=['POST'])
 def simulate_det():
