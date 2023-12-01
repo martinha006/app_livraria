@@ -41,3 +41,17 @@
         <!-- Os produtos no carrinho serão adicionados aqui dinamicamente -->
     </table>
 </div>
+@app.route('/simulate_compra')
+def simulate_compra():
+    titulo = request.form['titulo']
+    valor = request.form['valor']
+    cursor.execute("SELECT * FROM produto WHERE pr_preco = %s, pr_titulo = %s", (valor,titulo))
+    prt = cursor.fetchall()
+    return render_template('crrinho.html', produto=prt) # TA ERRADO
+    
+    <li class="item-menu ativo">
+        <a href="#">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <p href="tela_livros.html"><span class=text-link>Livros</span></p>
+        </a>
+    </li>

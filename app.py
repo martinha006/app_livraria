@@ -33,11 +33,6 @@ def login():
             # Credenciais inválidas, redireciona de volta para a página de login
             return render_template('tela_login.html')
 
-# Rota para simular o clique no botão de cadastro
-@app.route('/simulate_add')
-def simulate_add():
-    return render_template('tela_cad.html')
-
 @app.route('/add', methods=['POST'])
 def add():
     if request.method == 'POST':
@@ -48,12 +43,6 @@ def add():
         cursor.execute("SELECT * FROM produto")
         prt = cursor.fetchall()
         return render_template('/tela_livros.html', produto=prt)
-
-@app.route('/simulate_categoria', methods=['POST']) # NAO ESTA COMPLETO
-def simulate_categoria():
-        cursor.execute("SELECT * FROM categoria")
-        cat = cursor.fetchall()
-        return render_template('/categoria.html', categoria=cat)
 
 @app.route('/simulate_compra')
 def simulate_compra():
@@ -70,13 +59,26 @@ def simulate_det():
     prt = cursor.fetchall()
     return render_template('detalhar.html', produto=prt)
 
-# # Rota para a página de detalhes do produto
-# @app.route('/detalhar/<int:pr_id>')
-# def detalhar(pr_id):
-#     # Recupera os detalhes do produto do banco de dados
-#     cursor.execute("SELECT * FROM produto WHERE pr_id = %s", (pr_id,))
-#     produto = cursor.fetchone()
-#     return render_template('detalhar.html', produto=produto)
+# MENU LATERAL
+@app.route('/simulate_and')
+def simulate_and():
+    return render_template('tela_and.html')
+
+@app.route('/simulate_categoria', methods=['POST'])
+def simulate_categoria():
+        cursor.execute("SELECT * FROM categoria")
+        cat = cursor.fetchall()
+        return render_template('/categoria.html', categoria=cat)
+
+@app.route('/simulate_top3')
+def simulate_top3():
+    # Lógica para lidar com a rota do Top3 aqui
+    return render_template('tela_and.html')
+
+@app.route('/simulate_configuracoes')
+def simulate_configuracoes():
+    # Lógica para lidar com a rota de configurações aqui
+    return render_template('tela_and.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

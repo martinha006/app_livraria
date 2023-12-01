@@ -21,20 +21,19 @@
                     <div class="button-container">
                         <button class="button">FAVORITOS</button>
                         <button id="toggle-menu" class="button">CARRINHO</button> <!--id="toggle-menu-btm"-->
-
-
                 </div>
             </div>
         </div>
     </div> 
 
-    <nav class="menu-lateral"><!--MARIA-->
-        <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
             <ul>
                 <li class="item-menu ativo">
-                    <a href="#">
+                    <a href="{{ url_for('simulate_and') }}">
                         <span class="icon"><i class="bi bi-house"></i></span>
-                        <p href="tela_livros.html"><span class=text-link>Livros</span></p>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Livros</button>
                     </a>
                 </li>
                 <li class="item-menu">
@@ -48,23 +47,25 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="{{ url_for('simulate_top3') }}">
                         <span class="icon"><i class="bi bi-star"></i></span>
-                        <p href="tela_top.html"><span class=text-link>Top3</span></p>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Top3</button>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="{{ url_for('simulate_configuracoes') }}">
                         <span class="icon"><i class="bi bi-gear"></i></span>
-                        <p href="tela_and.html"><span class=text-link>Configurações</span></p>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Configurações</button>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
     
+    
     <div id="compras" class="tela fundo_fonte">
-        <h1>EU NÃO SEI FAZER ISSO</h1>
         {% for p in produto %}
             <div class="caixinha">
                 <div class="imagem">
