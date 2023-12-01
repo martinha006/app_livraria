@@ -13,6 +13,10 @@ def home():
     return render_template('index.html')
 
 # TELA LOGIN // SELECT
+@app.route('/login')
+def simulate_login():
+    return render_template('tela_login.html')
+
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
@@ -31,6 +35,10 @@ def login():
             return render_template('tela_login.html')
 
 # TELA CADASTRO // INSERT
+@app.route('/add')
+def simulate_add():
+    return render_template('tela_cad.html')
+
 @app.route('/add', methods=['POST'])
 def add():
     if request.method == 'POST':
@@ -52,11 +60,11 @@ def simulate_det():
 
 # MENU LATERAL
 @app.route('/livros')
-def livros():
-    return render_template('tela_livros.html')
+def simulate_livros():
+    return render_template('tela_and.html')
 
 @app.route('/ategoria', methods=['POST'])
-def categoria():
+def simulate_categoria():
         cursor.execute("SELECT * FROM categoria")
         cat = cursor.fetchall()
         return render_template('/categoria.html', categoria=cat)

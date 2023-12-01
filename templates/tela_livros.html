@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../static/css/CSS.css">
+    <link rel="stylesheet" href="../app.py">
     <title>MMG</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
         <div class="btn-expandir">
             <ul>
                 <li class="item-menu ativo">
-                    <a href="{{ url_for('livros') }}">
+                    <a href="{{ url_for('simulate_livros') }}">
                         <span class="icon"><i class="bi bi-house"></i></span>
                         <button type="button" class="text-link" style="font-size: 100%;
                         background-color: #906749; color: white; border: none">Livros</button>
@@ -40,7 +41,7 @@
                 <a href="#">
                     <span class="icon"><i class="bi bi-book"></i></span>
                     {% for p in produto %}
-                        <form action="{{ url_for('categoria') }}" method="post">
+                        <form action="{{ url_for('simulate_categoria') }}" method="post">
                             <input type="hidden" name="titulo" value="{{ p[1] }}">
                             <button type="submit" class="text-link" style="font-size: 100%;
                             background-color: #906749; color: white; border: none">Categorias</button>
@@ -49,14 +50,14 @@
                 </a>
                 </li>
                 <li class="item-menu">
-                    <a href="{{ url_for('top3') }}">
+                    <a href="{{ url_for('simulate_top3') }}">
                         <span class="icon"><i class="bi bi-star"></i></span>
                         <button type="button" class="text-link" style="font-size: 100%;
                         background-color: #906749; color: white; border: none">Top3</button>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="{{ url_for('configuracoes') }}">
+                    <a href="{{ url_for('simulate_configuracoes') }}">
                         <span class="icon"><i class="bi bi-gear"></i></span>
                         <button type="button" class="text-link" style="font-size: 100%;
                         background-color: #906749; color: white; border: none">Configurações</button>
