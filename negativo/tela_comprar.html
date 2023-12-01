@@ -74,3 +74,19 @@
     </div>
 </body>
 </html>
+
+# TELA COMPRAR
+@app.route('/simulate_tela_comprar', methods=['POST'])
+def simulate_tela_comprar():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        cpf = request.form['cpf']
+        email = request.form['email']
+        telefone = request.form['telefone']
+        endereco1 = request.form['endereco1']
+        endereco2 = request.form['endereco2']
+        cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (nome,cpf,email, telefone,endereco1, endereco2))
+        db.commit()
+        cursor.execute("SELECT * FROM produto")
+        prt = cursor.fetchall()
+        return render_template('/tela_comprar.html', produto=prt)

@@ -27,51 +27,46 @@
         </div>
     </div>
 
-    <div id="menu" class="menu">
-        <table style="width:100%">
-            <tr>
-                <th>Produto</th>
-                <th>Valor</th>
-                <th>Qtd</th>
-                <th>Total</th>
-                <th>Ações</th>
-            </tr>
-            <!-- Os produtos no carrinho serão adicionados aqui dinamicamente -->
-        </table>
-    </div>
-
-    <nav class="menu-lateral"><!--MARIA-->
-        <div class="btn-expandir"> <!-- <div id="menu" class="tela" > style="display: none" --> 
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
             <ul>
                 <li class="item-menu ativo">
-                    <a href="#">
+                    <a href="{{ url_for('simulate_livros') }}">
                         <span class="icon"><i class="bi bi-house"></i></span>
-                        <a href="tela_livros.html"><span class=text-link>Livros</span></a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-book"></i>
-                        </span></span>
-                        <a href="tela_and.html"><span class=text-link>Categoria</span></a>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Livros</button>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-star"></i>
-                        </span>
-                        <a href="tela_top.html"><span class=text-link>Top3</span></a>
-                    </a>
-
+                <a href="#">
+                    <span class="icon"><i class="bi bi-book"></i></span>
+                    {% for p in produto %}
+                        <form action="{{ url_for('simulate_categoria') }}" method="post">
+                            <input type="hidden" name="titulo" value="{{ p[1] }}">
+                            <button type="submit" class="text-link" style="font-size: 100%;
+                            background-color: #906749; color: white; border: none">Categorias</button>
+                        </form>
+                    {% endfor %}
+                </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="{{ url_for('simulate_top3') }}">
+                        <span class="icon"><i class="bi bi-star"></i></span>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Top3</button>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="{{ url_for('simulate_configuracoes') }}">
                         <span class="icon"><i class="bi bi-gear"></i></span>
-                        <a href="tela_and.html"><span class=text-link>Configurações</span></a>
+                        <button type="button" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Configurações</button>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
+
     <div>
         <div class="news-item">
             <div class="tp">
@@ -86,11 +81,12 @@
                             <p>Descrição:</p>
                             <p>{{ p[4] }}</p>            
                         </div>
-                        <button type="button" class="tp" style="text-align: center;"><a href="tela_comprar.html">Comprar</a></button>
+                        <button type="button" class="tp" style="text-align: center;">
+                            <a href="tela_comprar.html">Comprar</a></button>
                     {% endfor %}
+                </div>
             </div>
         </div>
-
-    </div>
+    </div>    
 </body>
 </html>

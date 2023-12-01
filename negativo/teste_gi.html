@@ -1,0 +1,189 @@
+<script src="script.js"></script>
+
+<a href="#" class="link-registro" onclick="mostrarTelaCadastro()">Cadastrar-se</a></p>
+
+<nav class="menu-lateral">
+    <div class="btn-expandir">
+        <ul>
+            <li class="item-menu ativo">
+                <a href="{{ url_for('simulate_livros') }}">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <button type="button" class="text-link" style="font-size: 100%;
+                    background-color: #906749; color: white; border: none">Livros</button>
+                </a>
+            </li>
+            <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-book"></i></span>
+                {% for p in produto %}
+                    <form action="{{ url_for('simulate_categoria') }}" method="post">
+                        <input type="hidden" name="titulo" value="{{ p[1] }}">
+                        <button type="submit" class="text-link" style="font-size: 100%;
+                        background-color: #906749; color: white; border: none">Categorias</button>
+                    </form>
+                {% endfor %}
+            </a>
+            </li>
+            <li class="item-menu">
+                <a href="{{ url_for('simulate_top3') }}">
+                    <span class="icon"><i class="bi bi-star"></i></span>
+                    <button type="button" class="text-link" style="font-size: 100%;
+                    background-color: #906749; color: white; border: none">Top3</button>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="{{ url_for('simulate_configuracoes') }}">
+                    <span class="icon"><i class="bi bi-gear"></i></span>
+                    <button type="button" class="text-link" style="font-size: 100%;
+                    background-color: #906749; color: white; border: none">Configurações</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="imagem">
+    <!-- Substitua '1.jpg' pelo campo adequado do seu banco de dados -->
+    <img src="{{ produto[0] }}.jpg" alt="Imagem do produto">
+</div>
+
+<div class="caixinha">
+    <h3>{{ p }}</h3>
+</div>
+
+# @app.route('/tela_livros')
+# def tela_livros():
+#     return render_template('tela_livros.html')
+
+<div class="estrelas">
+    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+    <label for="cm_star-1"><i class="fa fa-star"></i></label>
+    <input type="radio" id="cm_star-1" name="fb" value="1"/>
+    <label for="cm_star-2"><i class="fa fa-star"></i></label>
+    <input type="radio" id="cm_star-2" name="fb" value="2"/>
+    <label for="cm_star-3"><i class="fa fa-star"></i></label>
+    <input type="radio" id="cm_star-3" name="fb" value="3"/>
+    <label for="cm_star-4"><i class="fa fa-star"></i></label>
+    <input type="radio" id="cm_star-4" name="fb" value="4"/>
+    <label for="cm_star-5"><i class="fa fa-star"></i></label>
+    <input type="radio" id="cm_star-5" name="fb" value="5"/>
+</div>
+
+<div id="menu" class="menu">
+    <table style="width:100%">
+        <tr>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Qtd</th>
+            <th>Total</th>
+            <th>Ações</th>
+        </tr>
+        <!-- Os produtos no carrinho serão adicionados aqui dinamicamente -->
+    </table>
+</div>
+@app.route('/simulate_compra')
+def simulate_compra():
+    titulo = request.form['titulo']
+    valor = request.form['valor']
+    cursor.execute("SELECT * FROM produto WHERE pr_preco = %s, pr_titulo = %s", (valor,titulo))
+    prt = cursor.fetchall()
+    return render_template('crrinho.html', produto=prt) # TA ERRADO
+    
+    <li class="item-menu ativo">
+        <a href="#">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <p href="tela_livros.html"><span class=text-link>Livros</span></p>
+        </a>
+    </li>
+
+    from flask import Flask, request, render_template, redirect
+    import mysql.connector
+    
+    app = Flask(__name__)
+    
+    # Configuração do banco de dados
+    db = mysql.connector.connect(host="localhost", user="root", password="", database="livraria")
+    cursor = db.cursor()
+    
+    @app.route('/')
+    def home():
+        return render_template('index.html')
+    
+    # Rota para simular o clique no botão de login
+    @app.route('/simulate_login')
+    def simulate_login():
+        return render_template('tela_login.html')
+    
+    @app.route('/login', methods=['POST'])
+    def login():
+        if request.method == 'POST':
+            email = request.form['email']
+            senha = request.form['senha']
+            # Verifica as credenciais no banco de dados
+            cursor.execute("SELECT * FROM usuario WHERE usu_email=%s AND usu_senha=%s", (email, senha))
+            data = cursor.fetchall()
+            if data:
+                # Credenciais válidas, redireciona para a página desejada (por exemplo, tela_livros.html)
+                cursor.execute("SELECT * FROM produto")
+                prt = cursor.fetchall()
+                return render_template('/tela_livros.html', produto=prt)
+            else:
+                # Credenciais inválidas, redireciona de volta para a página de login
+                return render_template('tela_login.html')
+    
+    @app.route('/add', methods=['POST'])
+    def add():
+        if request.method == 'POST':
+            email = request.form['email']
+            senha = request.form['senha']
+            cursor.execute("INSERT INTO usuario (usu_email, usu_senha) VALUES (%s, %s)", (email, senha))
+            db.commit()
+            cursor.execute("SELECT * FROM produto")
+            prt = cursor.fetchall()
+            return render_template('/tela_livros.html', produto=prt)
+    
+    @app.route('/simulate_compra')
+    def simulate_compra():
+        titulo = request.form['titulo']
+        valor = request.form['valor']
+        cursor.execute("SELECT * FROM produto WHERE pr_preco = %s, pr_titulo = %s", (valor,titulo))
+        prt = cursor.fetchall()
+        return render_template('crrinho.html', produto=prt) # TA ERRADO
+    
+    @app.route('/simulate_det', methods=['POST'])
+    def simulate_det():
+        titulo = request.form['titulo']
+        cursor.execute("SELECT * FROM produto WHERE pr_titulo = %s", (titulo,))
+        prt = cursor.fetchall()
+        return render_template('detalhar.html', produto=prt)
+    
+    # MENU LATERAL
+    @app.route('/simulate_and')
+    def simulate_and():
+        return render_template('tela_and.html')
+    
+    @app.route('/simulate_categoria', methods=['POST'])
+    def simulate_categoria():
+            cursor.execute("SELECT * FROM categoria")
+            cat = cursor.fetchall()
+            return render_template('/categoria.html', categoria=cat)
+    
+    @app.route('/simulate_top3')
+    def simulate_top3():
+        # Lógica para lidar com a rota do Top3 aqui
+        return render_template('tela_and.html')
+    
+    @app.route('/simulate_configuracoes')
+    def simulate_configuracoes():
+        # Lógica para lidar com a rota de configurações aqui
+        return render_template('tela_and.html')
+    
+    if __name__ == '__main__':
+        app.run(debug=True)
+
+<form action="{{ url_for('simulate_compra') }}" method="post">
+    <input type="hidden" name="titulo" value="{{ p[1] }}">
+    <button type="submit">Comprar</button>
+</form>
+    
+    
